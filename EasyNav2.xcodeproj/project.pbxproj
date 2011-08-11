@@ -23,16 +23,16 @@
 		88085E6A13F3A93000E8E91A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88085E6C13F3A93000E8E91A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88085E6E13F3A93000E8E91A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		88085E7213F3A93000E8E91A /* EasyNav2-Info.plist */ = {isa = PBXFileReference; path = "EasyNav2-Info.plist"; sourceTree = "<group>"; };
+		88085E7213F3A93000E8E91A /* EasyNav2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyNav2-Info.plist"; sourceTree = "<group>"; };
 		88085E7413F3A93000E8E91A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		88085E7613F3A93000E8E91A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		88085E7813F3A93000E8E91A /* EasyNav2-Prefix.pch */ = {isa = PBXFileReference; path = "EasyNav2-Prefix.pch"; sourceTree = "<group>"; };
-		88085E7913F3A93000E8E91A /* EasyNav2AppDelegate.h */ = {isa = PBXFileReference; path = EasyNav2AppDelegate.h; sourceTree = "<group>"; };
+		88085E7813F3A93000E8E91A /* EasyNav2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyNav2-Prefix.pch"; sourceTree = "<group>"; };
+		88085E7913F3A93000E8E91A /* EasyNav2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyNav2AppDelegate.h; sourceTree = "<group>"; };
 		88085E7A13F3A93000E8E91A /* EasyNav2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyNav2AppDelegate.m; sourceTree = "<group>"; };
 		88085E7D13F3A93000E8E91A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		88085E7F13F3A93000E8E91A /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		88085E7F13F3A93000E8E91A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		88085E8013F3A93000E8E91A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		88085E8213F3A93000E8E91A /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		88085E8213F3A93000E8E91A /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		88085E8313F3A93000E8E91A /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +129,7 @@
 		88085E5D13F3A93000E8E91A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = www.timshi.com;
 			};
 			buildConfigurationList = 88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav2" */;
