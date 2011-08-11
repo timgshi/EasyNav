@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
+		88085E6D13F3A93000E8E91A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6C13F3A93000E8E91A /* Foundation.framework */; };
+		88085E6F13F3A93000E8E91A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6E13F3A93000E8E91A /* CoreGraphics.framework */; };
+		88085E7513F3A93000E8E91A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88085E7313F3A93000E8E91A /* InfoPlist.strings */; };
+		88085E7713F3A93000E8E91A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7613F3A93000E8E91A /* main.m */; };
+		88085E7B13F3A93000E8E91A /* EasyNav2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7A13F3A93000E8E91A /* EasyNav2AppDelegate.m */; };
+		88085E7E13F3A93000E8E91A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88085E7C13F3A93000E8E91A /* MainStoryboard.storyboard */; };
+		88085E8113F3A93000E8E91A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E8013F3A93000E8E91A /* MainViewController.m */; };
+		88085E8413F3A93000E8E91A /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E8313F3A93000E8E91A /* FlipsideViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88085E6613F3A93000E8E91A /* EasyNav2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNav2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88085E6A13F3A93000E8E91A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88085E6C13F3A93000E8E91A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88085E6E13F3A93000E8E91A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88085E7213F3A93000E8E91A /* EasyNav2-Info.plist */ = {isa = PBXFileReference; path = "EasyNav2-Info.plist"; sourceTree = "<group>"; };
+		88085E7413F3A93000E8E91A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88085E7613F3A93000E8E91A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88085E7813F3A93000E8E91A /* EasyNav2-Prefix.pch */ = {isa = PBXFileReference; path = "EasyNav2-Prefix.pch"; sourceTree = "<group>"; };
+		88085E7913F3A93000E8E91A /* EasyNav2AppDelegate.h */ = {isa = PBXFileReference; path = EasyNav2AppDelegate.h; sourceTree = "<group>"; };
+		88085E7A13F3A93000E8E91A /* EasyNav2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyNav2AppDelegate.m; sourceTree = "<group>"; };
+		88085E7D13F3A93000E8E91A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		88085E7F13F3A93000E8E91A /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		88085E8013F3A93000E8E91A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		88085E8213F3A93000E8E91A /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		88085E8313F3A93000E8E91A /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88085E6313F3A93000E8E91A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */,
+				88085E6D13F3A93000E8E91A /* Foundation.framework in Frameworks */,
+				88085E6F13F3A93000E8E91A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88085E5B13F3A93000E8E91A = {
+			isa = PBXGroup;
+			children = (
+				88085E7013F3A93000E8E91A /* EasyNav2 */,
+				88085E6913F3A93000E8E91A /* Frameworks */,
+				88085E6713F3A93000E8E91A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88085E6713F3A93000E8E91A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88085E6613F3A93000E8E91A /* EasyNav2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88085E6913F3A93000E8E91A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88085E6A13F3A93000E8E91A /* UIKit.framework */,
+				88085E6C13F3A93000E8E91A /* Foundation.framework */,
+				88085E6E13F3A93000E8E91A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88085E7013F3A93000E8E91A /* EasyNav2 */ = {
+			isa = PBXGroup;
+			children = (
+				88085E7913F3A93000E8E91A /* EasyNav2AppDelegate.h */,
+				88085E7A13F3A93000E8E91A /* EasyNav2AppDelegate.m */,
+				88085E7C13F3A93000E8E91A /* MainStoryboard.storyboard */,
+				88085E7F13F3A93000E8E91A /* MainViewController.h */,
+				88085E8013F3A93000E8E91A /* MainViewController.m */,
+				88085E8213F3A93000E8E91A /* FlipsideViewController.h */,
+				88085E8313F3A93000E8E91A /* FlipsideViewController.m */,
+				88085E7113F3A93000E8E91A /* Supporting Files */,
+			);
+			path = EasyNav2;
+			sourceTree = "<group>";
+		};
+		88085E7113F3A93000E8E91A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88085E7213F3A93000E8E91A /* EasyNav2-Info.plist */,
+				88085E7313F3A93000E8E91A /* InfoPlist.strings */,
+				88085E7613F3A93000E8E91A /* main.m */,
+				88085E7813F3A93000E8E91A /* EasyNav2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88085E6513F3A93000E8E91A /* EasyNav2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav2" */;
+			buildPhases = (
+				88085E6213F3A93000E8E91A /* Sources */,
+				88085E6313F3A93000E8E91A /* Frameworks */,
+				88085E6413F3A93000E8E91A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyNav2;
+			productName = EasyNav2;
+			productReference = 88085E6613F3A93000E8E91A /* EasyNav2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88085E5D13F3A93000E8E91A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = www.timshi.com;
+			};
+			buildConfigurationList = 88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88085E5B13F3A93000E8E91A;
+			productRefGroup = 88085E6713F3A93000E8E91A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88085E6513F3A93000E8E91A /* EasyNav2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88085E6413F3A93000E8E91A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88085E7513F3A93000E8E91A /* InfoPlist.strings in Resources */,
+				88085E7E13F3A93000E8E91A /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88085E6213F3A93000E8E91A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88085E7713F3A93000E8E91A /* main.m in Sources */,
+				88085E7B13F3A93000E8E91A /* EasyNav2AppDelegate.m in Sources */,
+				88085E8113F3A93000E8E91A /* MainViewController.m in Sources */,
+				88085E8413F3A93000E8E91A /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88085E7313F3A93000E8E91A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88085E7413F3A93000E8E91A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		88085E7C13F3A93000E8E91A /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88085E7D13F3A93000E8E91A /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88085E8513F3A93000E8E91A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88085E8613F3A93000E8E91A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88085E8813F3A93000E8E91A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyNav2/EasyNav2-Prefix.pch";
+				INFOPLIST_FILE = "EasyNav2/EasyNav2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		88085E8913F3A93000E8E91A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyNav2/EasyNav2-Prefix.pch";
+				INFOPLIST_FILE = "EasyNav2/EasyNav2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88085E8513F3A93000E8E91A /* Debug */,
+				88085E8613F3A93000E8E91A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88085E8813F3A93000E8E91A /* Debug */,
+				88085E8913F3A93000E8E91A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88085E5D13F3A93000E8E91A /* Project object */;
+}
