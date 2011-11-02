@@ -9,36 +9,47 @@
 #import "MainViewController.h"
 #import "FoursquareFetcher.h"
 
+#define MILES_PER_METER 0.000621371192
+
 
 @interface MainViewController()
 {
     NSString *_previousSearchText;
-    IBOutlet UILabel *locationNameLabel;
-    IBOutlet UILabel *locationAddressLabel;
-    IBOutlet UIImageView *locationTextBackgroundImageView;
-    IBOutlet UIImageView *arrowImageView;
 }
 @property (strong, nonatomic) NSMutableArray *resultsArray;
-@property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
-@property (strong, nonatomic) CLRegion *searchRegion;
+@property (strong, nonatomic) CLHeading *currentHeading;
 @property (strong, nonatomic) ADBannerView *bannerView;
 @property (strong, nonatomic) NSDictionary *selectedVenue;
+
+@property (strong, nonatomic) IBOutlet UILabel *locationNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationAddressLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *locationBackgroundImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
+@property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *distanceUnitsLabel;
+
+@property BOOL isNavigating, usingMeters;
+
 @end
 
-#define kDefaultSearchRadiusMeters 10000
-#define kSearchRegionIdentifier @"searchRegion"
 
 @implementation MainViewController
 
 @synthesize resultsArray = _resultsArray;
-@synthesize geocoder = _geocoder;
 @synthesize locationManager = _locationManager;
 @synthesize currentLocation = _currentLocation;
-@synthesize searchRegion = _searchRegion;
+@synthesize currentHeading = _currentHeading;
 @synthesize bannerView = _bannerView;
 @synthesize selectedVenue = _selectedVenue;
+@synthesize locationNameLabel = _locationNameLabel;
+@synthesize locationAddressLabel = _locationAddressLabel;
+@synthesize locationBackgroundImageView = _locationBackgroundImageView;
+@synthesize arrowImageView = _arrowImageView;
+@synthesize distanceLabel = _distanceLabel;
+@synthesize distanceUnitsLabel = _distanceUnitsLabel;
+@synthesize isNavigating, usingMeters;
 
 - (NSMutableArray *)resultsArray
 {
@@ -48,13 +59,7 @@
     return _resultsArray;
 }
 
-- (CLGeocoder *)geocoder
-{
-    if (!_geocoder) {
-        _geocoder = [[CLGeocoder alloc] init];
-    }
-    return _geocoder;
-}
+
 
 - (CLLocationManager *)locationManager
 {
@@ -62,7 +67,6 @@
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-        
     }
     return _locationManager;
 }
@@ -88,18 +92,51 @@
 
 #pragma mark - View lifecycle
 
+- (void)setLocationInfoHidden:(BOOL)hidden
+{
+    [_locationNameLabel setHidden:hidden];
+    [_locationAddressLabel setHidden:hidden];
+    [_locationBackgroundImageView setHidden:hidden];
+    [_arrowImageView setHidden:hidden];
+    [_distanceLabel setHidden:hidden];
+    [_distanceUnitsLabel setHidden:hidden];
+}
+
+#define PREFERRED_UNITS @"Preferred Units"
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    isNavigating = NO;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *storedUnitPreference = [defaults objectForKey:PREFERRED_UNITS];
+    if (storedUnitPreference) {
+        usingMeters = [storedUnitPreference boolValue];
+    } else {
+        storedUnitPreference = [NSNumber numberWithBool:NO];
+        [defaults setObject:storedUnitPreference forKey:PREFERRED_UNITS];
+        [defaults synchronize];
+        usingMeters = NO;
+    }
+	[self setLocationInfoHidden:YES];
+    [self.searchDisplayController.searchBar setBarStyle:UIBarStyleBlack];
+    [self.searchDisplayController.searchBar setBackgroundColor:[UIColor blackColor]];
+    [self.searchDisplayController.searchBar setTranslucent:YES];
+    [self.searchDisplayController.searchBar setTintColor:[UIColor clearColor]];
 }
 
 - (void)viewDidUnload
 {
-    locationNameLabel = nil;
-    locationAddressLabel = nil;
-    locationTextBackgroundImageView = nil;
-    arrowImageView = nil;
+    _locationNameLabel = nil;
+    _locationAddressLabel = nil;
+    _locationBackgroundImageView = nil;
+    _arrowImageView = nil;
+    [self setLocationNameLabel:nil];
+    [self setLocationAddressLabel:nil];
+    [self setLocationBackgroundImageView:nil];
+    [self setArrowImageView:nil];
+    [self setDistanceLabel:nil];
+    [self setDistanceUnitsLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -108,7 +145,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -128,17 +164,7 @@
 	[super viewDidDisappear:animated];
 }
 
-- (NSString *)addressStringFromPlacemark:(CLPlacemark *)placemark
-{
-    NSString *streetNumber = placemark.subThoroughfare;
-    NSString *streetName = placemark.thoroughfare;
-    NSString *city = placemark.locality;
-    NSString *state = placemark.administrativeArea;
-    NSString *postalCode = placemark.postalCode;
-    NSString *address = @"";
-    address = [address stringByAppendingFormat:@"%@ %@, %@, %@ %@", streetNumber, streetName, city, state, postalCode];
-    return address;
-}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -146,12 +172,102 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - Navigation Controls
+
+- (NSString *)addressStringFromLocation:(NSDictionary *)location
+{
+    NSString *street = [location objectForKey:@"address"];
+    NSString *city = [location objectForKey:@"city"];
+    NSString *state = [location objectForKey:@"state"];
+    NSString *postalCode = [location objectForKey:postalCode];
+    NSString *address = @"";
+    address = [address stringByAppendingFormat:@"%@ %@, %@ %@", street, city, state, postalCode];
+    return address;
+}
+
+- (NSString *)distanceFromCurrentLocationToLocation:(NSDictionary *)location
+{
+    NSNumber *distance = nil;
+    if (_currentLocation) {
+        double lat = [[location objectForKey:@"lat"] doubleValue];
+        double lng = [[location objectForKey:@"lng"] doubleValue];
+        CLLocation *venueLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+        CLLocationDistance distanceFromHere = [venueLocation distanceFromLocation:_currentLocation];
+        if (usingMeters) {
+            distance = [NSNumber numberWithDouble:distanceFromHere];
+        } else {
+            double milesFromHere = distanceFromHere * MILES_PER_METER;
+            distance = [NSNumber numberWithDouble:milesFromHere];
+        }
+    } else {
+        distance = [NSNumber numberWithDouble:0]; 
+    }
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setPositiveFormat:@"0.##"];
+    return [numberFormatter stringFromNumber:distance];
+}
+
+- (void)updateDistanceDisplay
+{
+    NSString *distance = [self distanceFromCurrentLocationToLocation:[_selectedVenue objectForKey:@"location"]];
+    NSString *units = (usingMeters) ? @"m" : @"mi";
+    [_distanceLabel setText:distance];
+    [_distanceUnitsLabel setText:units];
+}
+
+- (void)updateCompassDisplay
+{
+    
+}
+
+- (void)updateNavigationDisplay
+{
+    [self updateCompassDisplay];
+    [self updateDistanceDisplay];
+}
+
+- (void)startNavigation
+{
+    if (_selectedVenue) {
+        isNavigating = YES;
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingHeading];
+        NSString *name = [_selectedVenue objectForKey:@"name"];
+        NSString *address = [self addressStringFromLocation:[_selectedVenue objectForKey:@"location"]];
+        [_locationNameLabel setText:name];
+        [_locationAddressLabel setText:address];
+        [self updateDistanceDisplay];
+        [self setLocationInfoHidden:NO];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Destination!" 
+                                                        message:@"Please search for a destination first" 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"Ok" 
+                                              otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
+- (void)stopNavigation
+{
+    
+}
+
+- (void)pauseNavigation
+{
+    
+}
+
+
+
 #pragma mark - UITableViewDelegateMethods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.resultsArray count];
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -170,7 +286,10 @@
         double lng = [[locationDict objectForKey:@"lng"] doubleValue];
         CLLocation *venueLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
         CLLocationDistance distanceFromHere = [venueLocation distanceFromLocation:_currentLocation];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f meters away", distanceFromHere];
+        double milesFromHere = distanceFromHere * MILES_PER_METER;
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setPositiveFormat:@"0.##"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ miles away", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:milesFromHere]]];
     } else {
         cell.textLabel.text = @"";
         cell.detailTextLabel.text = @"";
@@ -182,6 +301,7 @@
 {
     _selectedVenue = [self.resultsArray objectAtIndex:indexPath.row];
     [self.searchDisplayController setActive:NO animated:YES];
+    [self startNavigation];
 }
 
 #pragma mark - UISearchDisplayDelegate Methods
@@ -189,9 +309,6 @@
 
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
 {
-    if (self.geocoder.geocoding) {
-        [self.geocoder cancelGeocode];
-    }
     if ([CLLocationManager locationServicesEnabled]) {
         [self.locationManager startUpdatingLocation];
     }
@@ -200,10 +317,6 @@
 
 - (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
 {
-    if (self.geocoder.geocoding) {
-        [self.geocoder cancelGeocode];
-    }
-    _geocoder = nil;
     [self.locationManager stopUpdatingLocation];
     _locationManager = nil;
     
@@ -217,14 +330,6 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"%@", searchBar.text);
-    /*
-    [self.geocoder geocodeAddressString:searchBar.text inRegion:_searchRegion completionHandler:^(NSArray *placemarks, NSError *error) {
-        [self.resultsArray removeAllObjects];
-        NSLog(@"%@", placemarks);
-        [self.resultsArray addObjectsFromArray:placemarks];
-        [self.searchDisplayController.searchResultsTableView reloadData];
-    }];
-    */
     [FoursquareFetcher foursqureVenuesForQuery:searchBar.text location:_currentLocation completionBlock:^(NSArray *venues){
         NSLog(@"%@", venues);
         [self.resultsArray removeAllObjects];
@@ -240,10 +345,17 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     _currentLocation = newLocation;
-    _searchRegion = nil;
-    _searchRegion = [[CLRegion alloc] initCircularRegionWithCenter:newLocation.coordinate radius:kDefaultSearchRadiusMeters identifier:kSearchRegionIdentifier];
-    //NSLog(@"%@", _currentLocation);
-    //NSLog(@"%@", _searchRegion);
+    if (isNavigating) {
+        [self updateDistanceDisplay];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    _currentHeading = newHeading;
+    if (isNavigating) {
+        [self updateCompassDisplay];
+    }
 }
 
 #pragma mark - ADBannerViewDelegate

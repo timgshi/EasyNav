@@ -38,7 +38,7 @@
                             <searchBar contentMode="redraw" placeholder="Search for a location to begin" id="17">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -67,14 +67,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.00" lineBreakMode="tailTruncation" minimumFontSize="10" id="Mfr-oV-tzZ">
+                                <rect key="frame" x="114" y="191" width="92" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="-2" height="-1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mi" lineBreakMode="tailTruncation" minimumFontSize="10" id="v7i-ph-21X">
+                                <rect key="frame" x="114" y="236" width="92" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="-2" height="-1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="arrowImageView" destination="iWt-0a-Z42" id="FGq-Vb-YeK"/>
-                        <outlet property="locationAddressLabel" destination="vkK-nZ-6jd" id="siP-7b-scx"/>
-                        <outlet property="locationNameLabel" destination="d4h-g5-2x5" id="VLc-K5-ats"/>
-                        <outlet property="locationTextBackgroundImageView" destination="C1Q-2W-4Rs" id="bh6-7k-y6p"/>
+                        <outlet property="arrowImageView" destination="iWt-0a-Z42" id="92R-Ka-eph"/>
+                        <outlet property="distanceLabel" destination="Mfr-oV-tzZ" id="AZj-Vu-LwK"/>
+                        <outlet property="distanceUnitsLabel" destination="v7i-ph-21X" id="kfC-MW-rtj"/>
+                        <outlet property="locationAddressLabel" destination="vkK-nZ-6jd" id="Z9f-gL-DZo"/>
+                        <outlet property="locationBackgroundImageView" destination="C1Q-2W-4Rs" id="oK5-hk-liL"/>
+                        <outlet property="locationNameLabel" destination="d4h-g5-2x5" id="Dby-W8-x4b"/>
                         <outlet property="searchDisplayController" destination="18" id="20"/>
                     </connections>
                 </viewController>
@@ -127,26 +145,8 @@
         <image name="background.png" width="640" height="960"/>
         <image name="location_background.png" width="640" height="108"/>
     </resources>
-    <classes>
-        <class className="FlipsideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="arrowImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="locationAddressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationTextBackgroundImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
