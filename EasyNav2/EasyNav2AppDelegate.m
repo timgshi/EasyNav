@@ -12,6 +12,14 @@
 
 @synthesize window = _window;
 
+#define kTestflightTeamID @"bec48ec49683f9bd58d587615fca9894_MjQ3NDAyMDExLTExLTAxIDIzOjIzOjMwLjM0NjI0Mg" 
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [TestFlight takeOff:kTestflightTeamID];
+    return YES;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

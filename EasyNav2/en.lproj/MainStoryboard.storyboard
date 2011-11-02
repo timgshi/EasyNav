@@ -1,20 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1856" systemVersion="10J869" targetRuntime="iOS.CocoaTouch" nextObjectID="17" propertyAccessControl="none" initialViewController="2">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1934" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="855"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="931"/>
     </dependencies>
     <scenes>
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstRespodner"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <userGuides>
+                            <userLayoutGuide location="12" affinity="minX"/>
+                        </userGuides>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="gOw-GT-RQS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="10">
-                                <rect key="frame" x="282" y="421" width="18" height="19"/>
+                                <rect key="frame" x="282" y="385" width="18" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal">
@@ -28,21 +35,64 @@
                                     <segue destination="6" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="11"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" placeholder="Search for a location to begin" id="17">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="25"/>
+                                </connections>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow.png" id="iWt-0a-Z42">
+                                <rect key="frame" x="20" y="130" width="280" height="261"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="location_background.png" id="C1Q-2W-4Rs">
+                                <rect key="frame" x="-15" y="62" width="350" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" minimumFontSize="10" id="d4h-g5-2x5">
+                                <rect key="frame" x="63" y="67" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address" lineBreakMode="tailTruncation" minimumFontSize="10" id="vkK-nZ-6jd">
+                                <rect key="frame" x="63" y="84" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedMetricsInferredSentinel key="simulatedStatusBarMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedTopBarMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedBottomBarMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedOrientationMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="arrowImageView" destination="iWt-0a-Z42" id="FGq-Vb-YeK"/>
+                        <outlet property="locationAddressLabel" destination="vkK-nZ-6jd" id="siP-7b-scx"/>
+                        <outlet property="locationNameLabel" destination="d4h-g5-2x5" id="VLc-K5-ats"/>
+                        <outlet property="locationTextBackgroundImageView" destination="C1Q-2W-4Rs" id="bh6-7k-y6p"/>
+                        <outlet property="searchDisplayController" destination="18" id="20"/>
+                    </connections>
                 </viewController>
+                <searchDisplayController id="18">
+                    <connections>
+                        <outlet property="delegate" destination="2" id="24"/>
+                        <outlet property="searchBar" destination="17" id="19"/>
+                        <outlet property="searchContentsController" destination="2" id="21"/>
+                        <outlet property="searchResultsDataSource" destination="2" id="22"/>
+                        <outlet property="searchResultsDelegate" destination="2" id="23"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-51" y="182"/>
+            <point key="canvasLocation" x="-48" y="182"/>
         </scene>
         <scene sceneID="9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8" sceneMemberID="firstRespodner"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8" sceneMemberID="firstResponder"/>
                 <viewController id="6" customClass="FlipsideViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -64,11 +114,6 @@
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedMetricsInferredSentinel key="simulatedStatusBarMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedTopBarMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedBottomBarMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedOrientationMetrics"/>
-                    <simulatedMetricsInferredSentinel key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="delegate" destination="2" id="15"/>
                     </connections>
@@ -77,6 +122,11 @@
             <point key="canvasLocation" x="368" y="182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.png" width="550" height="550"/>
+        <image name="background.png" width="640" height="960"/>
+        <image name="location_background.png" width="640" height="108"/>
+    </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
@@ -88,8 +138,16 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
-                <relationship kind="action" name="showInfo:"/>
+                <relationship kind="outlet" name="arrowImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="locationAddressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationTextBackgroundImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

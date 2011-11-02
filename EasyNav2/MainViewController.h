@@ -7,7 +7,11 @@
 //
 
 #import "FlipsideViewController.h"
+#import <MapKit/MapKit.h>
+#import <iAd/iAd.h>
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate, CLLocationManagerDelegate, ADBannerViewDelegate> {
+}
+
 
 @end
