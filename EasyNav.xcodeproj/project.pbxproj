@@ -41,6 +41,70 @@
 		4B300FA614AB332400147051 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9C14AB332400147051 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B300FA914AB348400147051 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FA814AB348400147051 /* MessageUI.framework */; };
 		4B300FAB14AB349000147051 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FAA14AB349000147051 /* SystemConfiguration.framework */; };
+		4B47605714ABB86900663DBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7613F3A93000E8E91A /* main.m */; };
+		4B47605814ABB86900663DBC /* EasyNavAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7A13F3A93000E8E91A /* EasyNavAppDelegate.m */; };
+		4B47605914ABB86900663DBC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E8013F3A93000E8E91A /* MainViewController.m */; };
+		4B47605A14ABB86900663DBC /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E8313F3A93000E8E91A /* FlipsideViewController.m */; };
+		4B47605B14ABB86900663DBC /* FoursquareFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E9313F4D89200E8E91A /* FoursquareFetcher.m */; };
+		4B47605C14ABB86900663DBC /* TSHeadingCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */; };
+		4B47605D14ABB86900663DBC /* AdWhirlAdapterGoogleAdMobAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F4414AB32F500147051 /* AdWhirlAdapterGoogleAdMobAds.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47605E14ABB86900663DBC /* AdWhirlAdapterIAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F4614AB32F500147051 /* AdWhirlAdapterIAd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47605F14ABB86900663DBC /* AdWhirlAdapterCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F4B14AB32F500147051 /* AdWhirlAdapterCustom.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606014ABB86900663DBC /* AdWhirlAdapterEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F4D14AB32F500147051 /* AdWhirlAdapterEvent.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606114ABB86900663DBC /* AdWhirlAdapterGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F4F14AB32F500147051 /* AdWhirlAdapterGeneric.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606214ABB86900663DBC /* AdWhirlAdNetworkAdapter+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5114AB32F500147051 /* AdWhirlAdNetworkAdapter+Helpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606314ABB86900663DBC /* AdWhirlAdNetworkAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5214AB32F500147051 /* AdWhirlAdNetworkAdapter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606414ABB86900663DBC /* AdWhirlAdNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5414AB32F500147051 /* AdWhirlAdNetworkConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606514ABB86900663DBC /* AdWhirlAdNetworkRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5614AB32F500147051 /* AdWhirlAdNetworkRegistry.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606614ABB86900663DBC /* AdWhirlClassWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5814AB32F500147051 /* AdWhirlClassWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606714ABB86900663DBC /* AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5A14AB32F500147051 /* AdWhirlConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606814ABB86900663DBC /* AdWhirlConfigStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5C14AB32F500147051 /* AdWhirlConfigStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606914ABB86900663DBC /* AdWhirlCustomAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F5E14AB32F500147051 /* AdWhirlCustomAdView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606A14ABB86900663DBC /* AdWhirlError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6014AB32F500147051 /* AdWhirlError.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606B14ABB86900663DBC /* AdWhirlLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6214AB32F500147051 /* AdWhirlLog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606C14ABB86900663DBC /* AdWhirlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6414AB32F500147051 /* AdWhirlView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606D14ABB86900663DBC /* AdWhirlWebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6714AB32F500147051 /* AdWhirlWebBrowserController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606E14ABB86900663DBC /* ARRollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6814AB32F500147051 /* ARRollerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47606F14ABB86900663DBC /* AWNetworkReachabilityWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6B14AB32F500147051 /* AWNetworkReachabilityWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607014ABB86900663DBC /* UIColor+AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F6D14AB32F500147051 /* UIColor+AdWhirlConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607114ABB86900663DBC /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F8814AB332400147051 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607214ABB86900663DBC /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F8B14AB332400147051 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607314ABB86900663DBC /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F8D14AB332400147051 /* NSCharacterSet_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607414ABB86900663DBC /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F8F14AB332400147051 /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607514ABB86900663DBC /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9114AB332400147051 /* NSScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607614ABB86900663DBC /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9414AB332400147051 /* CJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607714ABB86900663DBC /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9614AB332400147051 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607814ABB86900663DBC /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9814AB332400147051 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607914ABB86900663DBC /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9A14AB332400147051 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607A14ABB86900663DBC /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9C14AB332400147051 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B47607C14ABB86900663DBC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FAA14AB349000147051 /* SystemConfiguration.framework */; };
+		4B47607D14ABB86900663DBC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FA814AB348400147051 /* MessageUI.framework */; };
+		4B47607E14ABB86900663DBC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538B14AB2B5100070396 /* libz.dylib */; };
+		4B47607F14ABB86900663DBC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538914AB2B4900070396 /* libsqlite3.dylib */; };
+		4B47608014ABB86900663DBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538714AB2B3800070396 /* AVFoundation.framework */; };
+		4B47608114ABB86900663DBC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538514AB2B2F00070396 /* AudioToolbox.framework */; };
+		4B47608214ABB86900663DBC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538314AB2B2600070396 /* AddressBook.framework */; };
+		4B47608314ABB86900663DBC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085F0713F502C000E8E91A /* iAd.framework */; };
+		4B47608414ABB86900663DBC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E8E13F3B83C00E8E91A /* CoreLocation.framework */; };
+		4B47608514ABB86900663DBC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E8F13F3B83C00E8E91A /* MapKit.framework */; };
+		4B47608614ABB86900663DBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
+		4B47608714ABB86900663DBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6C13F3A93000E8E91A /* Foundation.framework */; };
+		4B47608814ABB86900663DBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6E13F3A93000E8E91A /* CoreGraphics.framework */; };
+		4B47608914ABB86900663DBC /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B054DA814AB0A9B00897EF4 /* libTestFlight.a */; };
+		4B47608A14ABB86900663DBC /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A539414AB2DBB00070396 /* libGoogleAdMobAds.a */; };
+		4B47608C14ABB86900663DBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88085E7313F3A93000E8E91A /* InfoPlist.strings */; };
+		4B47608D14ABB86900663DBC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88085E7C13F3A93000E8E91A /* MainStoryboard.storyboard */; };
+		4B47608E14ABB86900663DBC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC48C146177B30078B78C /* background.png */; };
+		4B47608F14ABB86900663DBC /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC48F146177CA0078B78C /* arrow.png */; };
+		4B47609014ABB86900663DBC /* location_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC491146177CF0078B78C /* location_background.png */; };
+		4B47609114ABB86900663DBC /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC493146177D60078B78C /* play.png */; };
+		4B47609214ABB86900663DBC /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC495146177DC0078B78C /* pause.png */; };
+		4B47609314ABB86900663DBC /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC497146177E10078B78C /* stop.png */; };
+		4B47609414ABB86900663DBC /* EasyNav_Icon_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */; };
+		4B47609514ABB86900663DBC /* EasyNav_Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */; };
+		4B47609614ABB86900663DBC /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A539514AB2DBB00070396 /* README.txt */; };
+		4B47609714ABB86900663DBC /* AdWhirlWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B300F6514AB32F500147051 /* AdWhirlWebBrowser.xib */; };
+		4B47609E14ABB8F900663DBC /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B47605314ABB7FA00663DBC /* libKIF.a */; };
 		4B7A538414AB2B2600070396 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538314AB2B2600070396 /* AddressBook.framework */; };
 		4B7A538614AB2B3000070396 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538514AB2B2F00070396 /* AudioToolbox.framework */; };
 		4B7A538814AB2B3800070396 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538714AB2B3800070396 /* AVFoundation.framework */; };
@@ -71,6 +135,16 @@
 		88085E9413F4D89300E8E91A /* FoursquareFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E9313F4D89200E8E91A /* FoursquareFetcher.m */; };
 		88085F0813F502C000E8E91A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085F0713F502C000E8E91A /* iAd.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4B47605214ABB7FA00663DBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B47604B14ABB7FA00663DBC /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAB07268139719AC008AF393;
+			remoteInfo = KIF;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4B054DA814AB0A9B00897EF4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -142,6 +216,9 @@
 		4B300FA714AB342B00147051 /* AdWhirlAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdNetworkAdapter.h; sourceTree = "<group>"; };
 		4B300FA814AB348400147051 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4B300FAA14AB349000147051 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4B47604B14ABB7FA00663DBC /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
+		4B47609B14ABB86900663DBC /* EasyNav (Integration Tests).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyNav (Integration Tests).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B47609D14ABB86A00663DBC /* EasyNav copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EasyNav copy-Info.plist"; path = "/Users/timshi/Developer/EasyNav/EasyNav copy-Info.plist"; sourceTree = "<absolute>"; };
 		4B7A538314AB2B2600070396 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		4B7A538514AB2B2F00070396 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4B7A538714AB2B3800070396 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -188,6 +265,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B47607B14ABB86900663DBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B47609E14ABB8F900663DBC /* libKIF.a in Frameworks */,
+				4B47607C14ABB86900663DBC /* SystemConfiguration.framework in Frameworks */,
+				4B47607D14ABB86900663DBC /* MessageUI.framework in Frameworks */,
+				4B47607E14ABB86900663DBC /* libz.dylib in Frameworks */,
+				4B47607F14ABB86900663DBC /* libsqlite3.dylib in Frameworks */,
+				4B47608014ABB86900663DBC /* AVFoundation.framework in Frameworks */,
+				4B47608114ABB86900663DBC /* AudioToolbox.framework in Frameworks */,
+				4B47608214ABB86900663DBC /* AddressBook.framework in Frameworks */,
+				4B47608314ABB86900663DBC /* iAd.framework in Frameworks */,
+				4B47608414ABB86900663DBC /* CoreLocation.framework in Frameworks */,
+				4B47608514ABB86900663DBC /* MapKit.framework in Frameworks */,
+				4B47608614ABB86900663DBC /* UIKit.framework in Frameworks */,
+				4B47608714ABB86900663DBC /* Foundation.framework in Frameworks */,
+				4B47608814ABB86900663DBC /* CoreGraphics.framework in Frameworks */,
+				4B47608914ABB86900663DBC /* libTestFlight.a in Frameworks */,
+				4B47608A14ABB86900663DBC /* libGoogleAdMobAds.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88085E6313F3A93000E8E91A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +432,14 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		4B47604C14ABB7FA00663DBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B47605314ABB7FA00663DBC /* libKIF.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4B7A538D14AB2DBB00070396 /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +476,8 @@
 				88085E7013F3A93000E8E91A /* EasyNav */,
 				88085E6913F3A93000E8E91A /* Frameworks */,
 				88085E6713F3A93000E8E91A /* Products */,
+				4B47604B14ABB7FA00663DBC /* KIF.xcodeproj */,
+				4B47609D14ABB86A00663DBC /* EasyNav copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -375,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				88085E6613F3A93000E8E91A /* EasyNav.app */,
+				4B47609B14ABB86900663DBC /* EasyNav (Integration Tests).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -438,6 +549,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B47605514ABB86900663DBC /* Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B47609814ABB86900663DBC /* Build configuration list for PBXNativeTarget "Integration Tests" */;
+			buildPhases = (
+				4B47605614ABB86900663DBC /* Sources */,
+				4B47607B14ABB86900663DBC /* Frameworks */,
+				4B47608B14ABB86900663DBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Integration Tests";
+			productName = EasyNav2;
+			productReference = 4B47609B14ABB86900663DBC /* EasyNav (Integration Tests).app */;
+			productType = "com.apple.product-type.application";
+		};
 		88085E6513F3A93000E8E91A /* EasyNav */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav" */;
@@ -474,14 +602,50 @@
 			mainGroup = 88085E5B13F3A93000E8E91A;
 			productRefGroup = 88085E6713F3A93000E8E91A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4B47604C14ABB7FA00663DBC /* Products */;
+					ProjectRef = 4B47604B14ABB7FA00663DBC /* KIF.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				88085E6513F3A93000E8E91A /* EasyNav */,
+				4B47605514ABB86900663DBC /* Integration Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		4B47605314ABB7FA00663DBC /* libKIF.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKIF.a;
+			remoteRef = 4B47605214ABB7FA00663DBC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
+		4B47608B14ABB86900663DBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B47608C14ABB86900663DBC /* InfoPlist.strings in Resources */,
+				4B47608D14ABB86900663DBC /* MainStoryboard.storyboard in Resources */,
+				4B47608E14ABB86900663DBC /* background.png in Resources */,
+				4B47608F14ABB86900663DBC /* arrow.png in Resources */,
+				4B47609014ABB86900663DBC /* location_background.png in Resources */,
+				4B47609114ABB86900663DBC /* play.png in Resources */,
+				4B47609214ABB86900663DBC /* pause.png in Resources */,
+				4B47609314ABB86900663DBC /* stop.png in Resources */,
+				4B47609414ABB86900663DBC /* EasyNav_Icon_v2.png in Resources */,
+				4B47609514ABB86900663DBC /* EasyNav_Splashscreen.png in Resources */,
+				4B47609614ABB86900663DBC /* README.txt in Resources */,
+				4B47609714ABB86900663DBC /* AdWhirlWebBrowser.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88085E6413F3A93000E8E91A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,6 +668,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B47605614ABB86900663DBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B47605714ABB86900663DBC /* main.m in Sources */,
+				4B47605814ABB86900663DBC /* EasyNavAppDelegate.m in Sources */,
+				4B47605914ABB86900663DBC /* MainViewController.m in Sources */,
+				4B47605A14ABB86900663DBC /* FlipsideViewController.m in Sources */,
+				4B47605B14ABB86900663DBC /* FoursquareFetcher.m in Sources */,
+				4B47605C14ABB86900663DBC /* TSHeadingCalculator.m in Sources */,
+				4B47605D14ABB86900663DBC /* AdWhirlAdapterGoogleAdMobAds.m in Sources */,
+				4B47605E14ABB86900663DBC /* AdWhirlAdapterIAd.m in Sources */,
+				4B47605F14ABB86900663DBC /* AdWhirlAdapterCustom.m in Sources */,
+				4B47606014ABB86900663DBC /* AdWhirlAdapterEvent.m in Sources */,
+				4B47606114ABB86900663DBC /* AdWhirlAdapterGeneric.m in Sources */,
+				4B47606214ABB86900663DBC /* AdWhirlAdNetworkAdapter+Helpers.m in Sources */,
+				4B47606314ABB86900663DBC /* AdWhirlAdNetworkAdapter.m in Sources */,
+				4B47606414ABB86900663DBC /* AdWhirlAdNetworkConfig.m in Sources */,
+				4B47606514ABB86900663DBC /* AdWhirlAdNetworkRegistry.m in Sources */,
+				4B47606614ABB86900663DBC /* AdWhirlClassWrapper.m in Sources */,
+				4B47606714ABB86900663DBC /* AdWhirlConfig.m in Sources */,
+				4B47606814ABB86900663DBC /* AdWhirlConfigStore.m in Sources */,
+				4B47606914ABB86900663DBC /* AdWhirlCustomAdView.m in Sources */,
+				4B47606A14ABB86900663DBC /* AdWhirlError.m in Sources */,
+				4B47606B14ABB86900663DBC /* AdWhirlLog.m in Sources */,
+				4B47606C14ABB86900663DBC /* AdWhirlView.m in Sources */,
+				4B47606D14ABB86900663DBC /* AdWhirlWebBrowserController.m in Sources */,
+				4B47606E14ABB86900663DBC /* ARRollerView.m in Sources */,
+				4B47606F14ABB86900663DBC /* AWNetworkReachabilityWrapper.m in Sources */,
+				4B47607014ABB86900663DBC /* UIColor+AdWhirlConfig.m in Sources */,
+				4B47607114ABB86900663DBC /* CDataScanner.m in Sources */,
+				4B47607214ABB86900663DBC /* CDataScanner_Extensions.m in Sources */,
+				4B47607314ABB86900663DBC /* NSCharacterSet_Extensions.m in Sources */,
+				4B47607414ABB86900663DBC /* NSDictionary_JSONExtensions.m in Sources */,
+				4B47607514ABB86900663DBC /* NSScanner_Extensions.m in Sources */,
+				4B47607614ABB86900663DBC /* CJSONDataSerializer.m in Sources */,
+				4B47607714ABB86900663DBC /* CJSONDeserializer.m in Sources */,
+				4B47607814ABB86900663DBC /* CJSONScanner.m in Sources */,
+				4B47607914ABB86900663DBC /* CJSONSerializer.m in Sources */,
+				4B47607A14ABB86900663DBC /* CSerializedJSONData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88085E6213F3A93000E8E91A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,6 +776,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4B47609914ABB86900663DBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"RUN_KIF_TESTS=1",
+					"DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/KIF/**",
+				);
+				INFOPLIST_FILE = "EasyNav copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks/AdMob\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-all-load",
+				);
+				PRODUCT_NAME = "EasyNav (Integration Tests)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4B47609A14ABB86900663DBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/KIF/**",
+				);
+				INFOPLIST_FILE = "EasyNav copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks/AdMob\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-all-load",
+				);
+				PRODUCT_NAME = "EasyNav (Integration Tests)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		88085E8513F3A93000E8E91A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -651,6 +915,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B47609814ABB86900663DBC /* Build configuration list for PBXNativeTarget "Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B47609914ABB86900663DBC /* Debug */,
+				4B47609A14ABB86900663DBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
