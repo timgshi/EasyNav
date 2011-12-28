@@ -35,6 +35,7 @@
 
 @property (strong, nonatomic) AdWhirlView *adWhirlView;
 
+- (void)adjustAdSize;
 @end
 
 
@@ -185,6 +186,7 @@
     - adFrame.size.height;
     [self.adWhirlView setFrame:adFrame];
     [self.view addSubview:self.adWhirlView];
+    [self adjustAdSize];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -484,6 +486,28 @@
     }];
 }
 
+- (void)adjustAdSize {
+    [UIView animateWithDuration:0.7 animations:^{
+        CGSize adSize = [self.adWhirlView actualAdSize];
+        CGRect newFrame = self.adWhirlView.frame;
+        newFrame.size.height = adSize.height;
+        newFrame.size.width = adSize.width;
+        newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2;
+        newFrame.origin.y = self.view.bounds.size.height - adSize.height;
+        self.adWhirlView.frame = newFrame;
+    }];
+}
+
+- (void)adWhirlWillPresentFullScreenModal
+{
+    
+}
+
+- (void)adWhirlDidDismissFullScreenModal
+{
+    [self adjustAdSize];
+}
+
 - (CLLocation *)locationInfo
 {
     return (self.currentLocation) ? self.currentLocation : nil;
@@ -493,6 +517,7 @@
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 
