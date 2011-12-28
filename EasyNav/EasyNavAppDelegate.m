@@ -1,6 +1,6 @@
 //
-//  EasyNav2AppDelegate.m
-//  EasyNav2
+//  EasyNavAppDelegate.m
+//  EasyNav
 //
 //  Created by Tim Shi on 8/10/11.
 //  Copyright 2011 www.timshi.com. All rights reserved.
