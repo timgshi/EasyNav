@@ -33,6 +33,9 @@
 
 @property BOOL isNavigating, usingMeters;
 
+@property (strong, nonatomic) AdWhirlView *adWhirlView;
+
+- (void)adjustAdSize;
 @end
 
 
@@ -51,6 +54,7 @@
 @synthesize distanceLabel = _distanceLabel;
 @synthesize distanceUnitsLabel = _distanceUnitsLabel;
 @synthesize isNavigating, usingMeters;
+@synthesize adWhirlView = _adWhirlView;
 
 - (NSMutableArray *)resultsArray
 {
@@ -83,6 +87,14 @@
         _bannerView.delegate = self;
     }
     return _bannerView;
+}
+
+- (AdWhirlView *)adWhirlView
+{
+    if (!_adWhirlView) {
+        _adWhirlView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
+    }
+    return _adWhirlView;
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,10 +136,22 @@
     [self.searchDisplayController.searchBar setBackgroundColor:[UIColor blackColor]];
     [self.searchDisplayController.searchBar setTranslucent:YES];
     [self.searchDisplayController.searchBar setTintColor:[UIColor clearColor]];
+#ifndef DEBUG
     CLLocation *origin = [[CLLocation alloc] initWithLatitude:0 longitude:0];
     CLLocation *destination = [[CLLocation alloc] initWithLatitude:0 longitude:-45];
     double testbearing = [TSHeadingCalculator bearingToDestination:destination fromOrigin:origin];
     NSLog(@"BEARING TEST \nOrigin: %@ \nDestination: %@ \nBearing: %f", origin, destination, testbearing);
+#endif
+    UIDevice *device = [UIDevice currentDevice];
+    if ([device respondsToSelector:@selector(isMultitaskingSupported)] &&
+        [device isMultitaskingSupported]) {
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(enterForeground:)
+         name:UIApplicationWillEnterForegroundNotification
+         object:nil];
+    }
+
 }
 
 - (void)viewDidUnload
@@ -155,13 +179,21 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.view addSubview:self.bannerView];
+//    [self.view addSubview:self.bannerView];
+    CGRect adFrame = [self.adWhirlView frame];
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    adFrame.origin.y = screenBounds.size.height
+    - adFrame.size.height;
+    [self.adWhirlView setFrame:adFrame];
+    [self.view addSubview:self.adWhirlView];
+    [self adjustAdSize];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    [self.bannerView removeFromSuperview];
+//    [self.bannerView removeFromSuperview];
+    [self.adWhirlView removeFromSuperview];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -169,12 +201,16 @@
 	[super viewDidDisappear:animated];
 }
 
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark multitasking methods
+
+- (void)enterForeground:(NSNotification *)notification {
+    [self.adWhirlView updateAdWhirlConfig];
 }
 
 #pragma mark - Navigation Controls
@@ -363,65 +399,125 @@
     }
 }
 
-#pragma mark - ADBannerViewDelegate
+//#pragma mark - ADBannerViewDelegate
+//
+//
+//-(void)layoutForCurrentOrientation:(BOOL)animated
+//{
+//    CGFloat animationDuration = animated ? 0.2f : 0.0f;
+//    // by default content consumes the entire view area
+//    CGRect contentFrame = self.view.bounds;
+//    // the banner still needs to be adjusted further, but this is a reasonable starting point
+//    // the y value will need to be adjusted by the banner height to get the final position
+//	CGPoint bannerOrigin = CGPointMake(CGRectGetMinX(contentFrame), CGRectGetMaxY(contentFrame));
+//    CGFloat bannerHeight = 0.0f;
+//    //_iadBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+//    bannerHeight = _bannerView.bounds.size.height; 
+//	
+//    // Depending on if the banner has been loaded, we adjust the content frame and banner location
+//    // to accomodate the ad being on or off screen.
+//    // This layout is for an ad at the bottom of the view.
+//    if(_bannerView.bannerLoaded)
+//    {
+//        contentFrame.size.height -= bannerHeight;
+//		bannerOrigin.y -= bannerHeight;
+//    }
+//    else
+//    {
+//		bannerOrigin.y += bannerHeight;
+//    }
+//    
+//    // And finally animate the changes, running layout for the content view if required.
+//    [UIView animateWithDuration:animationDuration
+//                     animations:^{
+//                         _bannerView.frame = CGRectMake(bannerOrigin.x, bannerOrigin.y, _bannerView.frame.size.width, _bannerView.frame.size.height);
+//                     }];
+//}
+// 
+//
+//-(void)bannerViewDidLoadAd:(ADBannerView *)banner
+//{
+//    [self layoutForCurrentOrientation:YES];
+//}
+//
+//-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+//{
+//    [self layoutForCurrentOrientation:YES];
+//}
+//
+//-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+//{
+//    return YES;
+//}
+//
+//-(void)bannerViewActionDidFinish:(ADBannerView *)banner
+//{
+//}
+//
+#pragma mark - AdWhirlDelegate Protocol Methods
 
-
--(void)layoutForCurrentOrientation:(BOOL)animated
+- (NSString *)adWhirlApplicationKey
 {
-    CGFloat animationDuration = animated ? 0.2f : 0.0f;
-    // by default content consumes the entire view area
-    CGRect contentFrame = self.view.bounds;
-    // the banner still needs to be adjusted further, but this is a reasonable starting point
-    // the y value will need to be adjusted by the banner height to get the final position
-	CGPoint bannerOrigin = CGPointMake(CGRectGetMinX(contentFrame), CGRectGetMaxY(contentFrame));
-    CGFloat bannerHeight = 0.0f;
-    //_iadBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    bannerHeight = _bannerView.bounds.size.height; 
-	
-    // Depending on if the banner has been loaded, we adjust the content frame and banner location
-    // to accomodate the ad being on or off screen.
-    // This layout is for an ad at the bottom of the view.
-    if(_bannerView.bannerLoaded)
-    {
-        contentFrame.size.height -= bannerHeight;
-		bannerOrigin.y -= bannerHeight;
-    }
-    else
-    {
-		bannerOrigin.y += bannerHeight;
-    }
-    
-    // And finally animate the changes, running layout for the content view if required.
-    [UIView animateWithDuration:animationDuration
-                     animations:^{
-                         _bannerView.frame = CGRectMake(bannerOrigin.x, bannerOrigin.y, _bannerView.frame.size.width, _bannerView.frame.size.height);
-                     }];
+    return kEN_ADWHIRL_KEY;
 }
- 
 
--(void)bannerViewDidLoadAd:(ADBannerView *)banner
+- (UIViewController *)viewControllerForPresentingModalView
 {
-    [self layoutForCurrentOrientation:YES];
+    return self;
 }
 
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    [self layoutForCurrentOrientation:YES];
-}
-
--(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+#ifndef DEBUG
+- (BOOL)adWhirlTestMode
 {
     return YES;
 }
+#endif
 
--(void)bannerViewActionDidFinish:(ADBannerView *)banner
+- (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView
 {
+    [UIView animateWithDuration:0.7 animations:^{
+        CGSize adSize = [self.adWhirlView actualAdSize];
+        CGRect newFrame = self.adWhirlView.frame;
+        newFrame.size.height = adSize.height;
+        newFrame.size.width = adSize.width;
+        newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2;
+        newFrame.origin.y = self.view.bounds.size.height - adSize.height;
+        self.adWhirlView.frame = newFrame; 
+    }];
+}
+
+- (void)adjustAdSize {
+    [UIView animateWithDuration:0.7 animations:^{
+        CGSize adSize = [self.adWhirlView actualAdSize];
+        CGRect newFrame = self.adWhirlView.frame;
+        newFrame.size.height = adSize.height;
+        newFrame.size.width = adSize.width;
+        newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2;
+        newFrame.origin.y = self.view.bounds.size.height - adSize.height;
+        self.adWhirlView.frame = newFrame;
+    }];
+}
+
+- (void)adWhirlWillPresentFullScreenModal
+{
+    
+}
+
+- (void)adWhirlDidDismissFullScreenModal
+{
+    [self adjustAdSize];
+}
+
+- (CLLocation *)locationInfo
+{
+    return (self.currentLocation) ? self.currentLocation : nil;
 }
 
 #pragma mark - Flipside View
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 
