@@ -16,6 +16,7 @@
 		4B9FC498146177E10078B78C /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC497146177E10078B78C /* stop.png */; };
 		4B9FC49A146177E80078B78C /* EasyNav_Icon_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */; };
 		4B9FC49C146177F00078B78C /* EasyNav_Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */; };
+		4BF4ACF614619C19000217C1 /* TSHeadingCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */; };
 		88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
 		88085E6D13F3A93000E8E91A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6C13F3A93000E8E91A /* Foundation.framework */; };
 		88085E6F13F3A93000E8E91A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6E13F3A93000E8E91A /* CoreGraphics.framework */; };
@@ -42,14 +43,16 @@
 		4B9FC497146177E10078B78C /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Icon_v2.png; sourceTree = "<group>"; };
 		4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Splashscreen.png; sourceTree = "<group>"; };
-		88085E6613F3A93000E8E91A /* EasyNav2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNav2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BF4ACF414619C19000217C1 /* TSHeadingCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHeadingCalculator.h; sourceTree = "<group>"; };
+		4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHeadingCalculator.m; sourceTree = "<group>"; };
+		88085E6613F3A93000E8E91A /* EasyNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88085E6A13F3A93000E8E91A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88085E6C13F3A93000E8E91A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88085E6E13F3A93000E8E91A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		88085E7213F3A93000E8E91A /* EasyNav2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyNav2-Info.plist"; sourceTree = "<group>"; };
+		88085E7213F3A93000E8E91A /* EasyNav-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "EasyNav-Info.plist"; sourceTree = "<group>"; };
 		88085E7413F3A93000E8E91A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		88085E7613F3A93000E8E91A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		88085E7813F3A93000E8E91A /* EasyNav2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyNav2-Prefix.pch"; sourceTree = "<group>"; };
+		88085E7813F3A93000E8E91A /* EasyNav-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyNav-Prefix.pch"; sourceTree = "<group>"; };
 		88085E7913F3A93000E8E91A /* EasyNav2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyNav2AppDelegate.h; sourceTree = "<group>"; };
 		88085E7A13F3A93000E8E91A /* EasyNav2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyNav2AppDelegate.m; sourceTree = "<group>"; };
 		88085E7D13F3A93000E8E91A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -100,7 +103,7 @@
 		88085E5B13F3A93000E8E91A = {
 			isa = PBXGroup;
 			children = (
-				88085E7013F3A93000E8E91A /* EasyNav2 */,
+				88085E7013F3A93000E8E91A /* EasyNav */,
 				88085E6913F3A93000E8E91A /* Frameworks */,
 				88085E6713F3A93000E8E91A /* Products */,
 			);
@@ -109,7 +112,7 @@
 		88085E6713F3A93000E8E91A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88085E6613F3A93000E8E91A /* EasyNav2.app */,
+				88085E6613F3A93000E8E91A /* EasyNav.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,12 +129,14 @@
 				88085E6C13F3A93000E8E91A /* Foundation.framework */,
 				88085E6E13F3A93000E8E91A /* CoreGraphics.framework */,
 			);
-			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		88085E7013F3A93000E8E91A /* EasyNav2 */ = {
+		88085E7013F3A93000E8E91A /* EasyNav */ = {
 			isa = PBXGroup;
 			children = (
+				4BF4ACF414619C19000217C1 /* TSHeadingCalculator.h */,
+				4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */,
 				88085E7913F3A93000E8E91A /* EasyNav2AppDelegate.h */,
 				88085E7A13F3A93000E8E91A /* EasyNav2AppDelegate.m */,
 				88085E7C13F3A93000E8E91A /* MainStoryboard.storyboard */,
@@ -143,16 +148,16 @@
 				88085E9313F4D89200E8E91A /* FoursquareFetcher.m */,
 				88085E7113F3A93000E8E91A /* Supporting Files */,
 			);
-			path = EasyNav2;
+			path = EasyNav;
 			sourceTree = "<group>";
 		};
 		88085E7113F3A93000E8E91A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				88085E7213F3A93000E8E91A /* EasyNav2-Info.plist */,
+				88085E7213F3A93000E8E91A /* EasyNav-Info.plist */,
 				88085E7313F3A93000E8E91A /* InfoPlist.strings */,
 				88085E7613F3A93000E8E91A /* main.m */,
-				88085E7813F3A93000E8E91A /* EasyNav2-Prefix.pch */,
+				88085E7813F3A93000E8E91A /* EasyNav-Prefix.pch */,
 				4B9FC48E146177B80078B78C /* Icons */,
 			);
 			name = "Supporting Files";
@@ -161,9 +166,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88085E6513F3A93000E8E91A /* EasyNav2 */ = {
+		88085E6513F3A93000E8E91A /* EasyNav */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav2" */;
+			buildConfigurationList = 88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav" */;
 			buildPhases = (
 				88085E6213F3A93000E8E91A /* Sources */,
 				88085E6313F3A93000E8E91A /* Frameworks */,
@@ -173,9 +178,9 @@
 			);
 			dependencies = (
 			);
-			name = EasyNav2;
+			name = EasyNav;
 			productName = EasyNav2;
-			productReference = 88085E6613F3A93000E8E91A /* EasyNav2.app */;
+			productReference = 88085E6613F3A93000E8E91A /* EasyNav.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +192,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = www.timshi.com;
 			};
-			buildConfigurationList = 88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav2" */;
+			buildConfigurationList = 88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -199,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88085E6513F3A93000E8E91A /* EasyNav2 */,
+				88085E6513F3A93000E8E91A /* EasyNav */,
 			);
 		};
 /* End PBXProject section */
@@ -234,6 +239,7 @@
 				88085E8113F3A93000E8E91A /* MainViewController.m in Sources */,
 				88085E8413F3A93000E8E91A /* FlipsideViewController.m in Sources */,
 				88085E9413F4D89300E8E91A /* FoursquareFetcher.m in Sources */,
+				4BF4ACF614619C19000217C1 /* TSHeadingCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,13 +314,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EasyNav2/EasyNav2-Prefix.pch";
-				INFOPLIST_FILE = "EasyNav2/EasyNav2-Info.plist";
+				GCC_PREFIX_HEADER = "EasyNav2/EasyNav-Prefix.pch";
+				INFOPLIST_FILE = "EasyNav2/EasyNav-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EasyNav;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -323,13 +329,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EasyNav2/EasyNav2-Prefix.pch";
-				INFOPLIST_FILE = "EasyNav2/EasyNav2-Info.plist";
+				GCC_PREFIX_HEADER = "EasyNav2/EasyNav-Prefix.pch";
+				INFOPLIST_FILE = "EasyNav2/EasyNav-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EasyNav;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -337,7 +343,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav2" */ = {
+		88085E6013F3A93000E8E91A /* Build configuration list for PBXProject "EasyNav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88085E8513F3A93000E8E91A /* Debug */,
@@ -346,7 +352,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav2" */ = {
+		88085E8713F3A93000E8E91A /* Build configuration list for PBXNativeTarget "EasyNav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88085E8813F3A93000E8E91A /* Debug */,
