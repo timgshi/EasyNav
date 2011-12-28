@@ -365,13 +365,6 @@
 		88085E5B13F3A93000E8E91A = {
 			isa = PBXGroup;
 			children = (
-				4B300FAA14AB349000147051 /* SystemConfiguration.framework */,
-				4B300FA814AB348400147051 /* MessageUI.framework */,
-				4B7A538B14AB2B5100070396 /* libz.dylib */,
-				4B7A538914AB2B4900070396 /* libsqlite3.dylib */,
-				4B7A538714AB2B3800070396 /* AVFoundation.framework */,
-				4B7A538514AB2B2F00070396 /* AudioToolbox.framework */,
-				4B7A538314AB2B2600070396 /* AddressBook.framework */,
 				88085E7013F3A93000E8E91A /* EasyNav */,
 				88085E6913F3A93000E8E91A /* Frameworks */,
 				88085E6713F3A93000E8E91A /* Products */,
@@ -394,6 +387,13 @@
 				4B7A538D14AB2DBB00070396 /* AdMob */,
 				4B054DA814AB0A9B00897EF4 /* libTestFlight.a */,
 				4B054DA914AB0A9B00897EF4 /* TestFlight.h */,
+				4B300FAA14AB349000147051 /* SystemConfiguration.framework */,
+				4B300FA814AB348400147051 /* MessageUI.framework */,
+				4B7A538B14AB2B5100070396 /* libz.dylib */,
+				4B7A538914AB2B4900070396 /* libsqlite3.dylib */,
+				4B7A538714AB2B3800070396 /* AVFoundation.framework */,
+				4B7A538514AB2B2F00070396 /* AudioToolbox.framework */,
+				4B7A538314AB2B2600070396 /* AddressBook.framework */,
 				88085E8E13F3B83C00E8E91A /* CoreLocation.framework */,
 				88085F0713F502C000E8E91A /* iAd.framework */,
 				88085E8F13F3B83C00E8E91A /* MapKit.framework */,
