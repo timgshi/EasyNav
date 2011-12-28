@@ -6,9 +6,9 @@
 //  Copyright 2011 www.timshi.com. All rights reserved.
 //
 
-#import "EasyNav2AppDelegate.h"
+#import "EasyNavAppDelegate.h"
 
-@implementation EasyNav2AppDelegate
+@implementation EasyNavAppDelegate
 
 @synthesize window = _window;
 

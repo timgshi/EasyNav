@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EasyNav2AppDelegate : UIResponder <UIApplicationDelegate>
+@interface EasyNavAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
