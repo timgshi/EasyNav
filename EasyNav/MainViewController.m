@@ -153,13 +153,6 @@
 
 }
 
-#pragma mark multitasking methods
-
-- (void)enterForeground:(NSNotification *)notification {
-    [self.adWhirlView updateAdWhirlConfig];
-}
-
-
 - (void)viewDidUnload
 {
     _locationNameLabel = nil;
@@ -186,6 +179,11 @@
 {
     [super viewDidAppear:animated];
 //    [self.view addSubview:self.bannerView];
+    CGRect adFrame = [self.adWhirlView frame];
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    adFrame.origin.y = screenBounds.size.height
+    - adFrame.size.height;
+    [self.adWhirlView setFrame:adFrame];
     [self.view addSubview:self.adWhirlView];
 }
 
@@ -201,12 +199,16 @@
 	[super viewDidDisappear:animated];
 }
 
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark multitasking methods
+
+- (void)enterForeground:(NSNotification *)notification {
+    [self.adWhirlView updateAdWhirlConfig];
 }
 
 #pragma mark - Navigation Controls
@@ -477,6 +479,7 @@
         newFrame.size.height = adSize.height;
         newFrame.size.width = adSize.width;
         newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2;
+        newFrame.origin.y = self.view.bounds.size.height - adSize.height;
         self.adWhirlView.frame = newFrame; 
     }];
 }
