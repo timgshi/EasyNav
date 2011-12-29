@@ -356,7 +356,11 @@
         double milesFromHere = distanceFromHere * MILES_PER_METER;
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setPositiveFormat:@"0.##"];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ miles away", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:milesFromHere]]];
+        if (usingMeters) {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ meters away", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:distanceFromHere]]];
+        } else {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ miles away", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:milesFromHere]]];
+        }
     } else {
         cell.textLabel.text = @"";
         cell.detailTextLabel.text = @"";
