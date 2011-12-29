@@ -344,7 +344,6 @@
         NSDictionary *venue = (NSDictionary *)obj;
         cell.textLabel.text = [venue objectForKey:@"name"];
         NSDictionary *locationDict = [venue objectForKey:@"location"];
-        NSLog(@"locationdict: %@", locationDict);
         double lat = [[locationDict objectForKey:@"lat"] doubleValue];
         double lng = [[locationDict objectForKey:@"lng"] doubleValue];
         CLLocation *venueLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lng];

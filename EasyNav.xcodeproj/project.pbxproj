@@ -915,6 +915,7 @@
 		88085E8813F3A93000E8E91A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Timothy Shi";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
 				INFOPLIST_FILE = "EasyNav/EasyNav-Info.plist";
@@ -925,6 +926,7 @@
 					"\"$(SRCROOT)/Frameworks/AdMob\"",
 				);
 				PRODUCT_NAME = EasyNav;
+				PROVISIONING_PROFILE = "5F542D25-E2AF-406F-9F43-43CBEB46B401";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -932,6 +934,7 @@
 		88085E8913F3A93000E8E91A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Timothy Shi";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
 				INFOPLIST_FILE = "EasyNav/EasyNav-Info.plist";
@@ -942,6 +945,7 @@
 					"\"$(SRCROOT)/Frameworks/AdMob\"",
 				);
 				PRODUCT_NAME = EasyNav;
+				PROVISIONING_PROFILE = "5F542D25-E2AF-406F-9F43-43CBEB46B401";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

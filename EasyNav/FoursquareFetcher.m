@@ -35,10 +35,7 @@
         const char *utfstring = [response UTF8String];
         NSData *data = [NSData dataWithBytes:utfstring length:strlen(utfstring)];
         id responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        //NSLog(@"DICTIONARY: %@", [responseDict description]);
-        NSLog(@"Class: %@", [responseDict class]);
         NSDictionary *dict = (NSDictionary *)responseDict;
-        NSLog(@"Keys: %@", [dict allKeys]);
         dispatch_async(dispatch_get_main_queue(), ^{
             block([[dict objectForKey:@"response"] objectForKey:@"venues"]);
         });
