@@ -101,8 +101,6 @@
 		4B47609114ABB86900663DBC /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC493146177D60078B78C /* play.png */; };
 		4B47609214ABB86900663DBC /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC495146177DC0078B78C /* pause.png */; };
 		4B47609314ABB86900663DBC /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC497146177E10078B78C /* stop.png */; };
-		4B47609414ABB86900663DBC /* EasyNav_Icon_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */; };
-		4B47609514ABB86900663DBC /* EasyNav_Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */; };
 		4B47609614ABB86900663DBC /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A539514AB2DBB00070396 /* README.txt */; };
 		4B47609714ABB86900663DBC /* AdWhirlWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B300F6514AB32F500147051 /* AdWhirlWebBrowser.xib */; };
 		4B47609E14ABB8F900663DBC /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B47605314ABB7FA00663DBC /* libKIF.a */; };
@@ -115,14 +113,21 @@
 		4B7A538C14AB2B5100070396 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538B14AB2B5100070396 /* libz.dylib */; };
 		4B7A539614AB2DBB00070396 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A539414AB2DBB00070396 /* libGoogleAdMobAds.a */; };
 		4B7A539714AB2DBB00070396 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A539514AB2DBB00070396 /* README.txt */; };
+		4B95F6DE14AC6CE600CCFC42 /* EasyNav_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6DD14AC6CE600CCFC42 /* EasyNav_Icon.png */; };
+		4B95F6E014AC6D0B00CCFC42 /* EasyNav_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6DF14AC6D0B00CCFC42 /* EasyNav_Icon@2x.png */; };
+		4B95F6E214AC6D1700CCFC42 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6E114AC6D1700CCFC42 /* iTunesArtwork */; };
+		4B95F6E414AC6D1E00CCFC42 /* EasyNav_Icon_Spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6E314AC6D1E00CCFC42 /* EasyNav_Icon_Spotlight@2x.png */; };
+		4B95F6E614AC6D2900CCFC42 /* EasyNav_Icon_Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6E514AC6D2900CCFC42 /* EasyNav_Icon_Spotlight.png */; };
+		4B95F6E814AC6D4700CCFC42 /* EasyNav_Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6E714AC6D4700CCFC42 /* EasyNav_Splashscreen.png */; };
+		4B95F6EA14AC6D5100CCFC42 /* EasyNav_Splashscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6E914AC6D5000CCFC42 /* EasyNav_Splashscreen@2x.png */; };
+		4B95F6EC14AD18E600CCFC42 /* EasyNav_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6EB14AD18E600CCFC42 /* EasyNav_Icon@2x.png */; };
+		4B95F6EE14AD1A6E00CCFC42 /* background-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B95F6ED14AD1A6E00CCFC42 /* background-1.png */; };
 		4B9FC48D146177B30078B78C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC48C146177B30078B78C /* background.png */; };
 		4B9FC490146177CA0078B78C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC48F146177CA0078B78C /* arrow.png */; };
 		4B9FC492146177CF0078B78C /* location_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC491146177CF0078B78C /* location_background.png */; };
 		4B9FC494146177D60078B78C /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC493146177D60078B78C /* play.png */; };
 		4B9FC496146177DC0078B78C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC495146177DC0078B78C /* pause.png */; };
 		4B9FC498146177E10078B78C /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC497146177E10078B78C /* stop.png */; };
-		4B9FC49A146177E80078B78C /* EasyNav_Icon_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */; };
-		4B9FC49C146177F00078B78C /* EasyNav_Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */; };
 		4BCE0C4A14AC4E4D00F37E03 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */; };
 		4BF4ACF614619C19000217C1 /* TSHeadingCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */; };
 		88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
@@ -241,14 +246,21 @@
 		4B7A539314AB2DBB00070396 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
 		4B7A539414AB2DBB00070396 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		4B7A539514AB2DBB00070396 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		4B95F6DD14AC6CE600CCFC42 /* EasyNav_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Icon.png; sourceTree = "<group>"; };
+		4B95F6DF14AC6D0B00CCFC42 /* EasyNav_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasyNav_Icon@2x.png"; sourceTree = "<group>"; };
+		4B95F6E114AC6D1700CCFC42 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		4B95F6E314AC6D1E00CCFC42 /* EasyNav_Icon_Spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasyNav_Icon_Spotlight@2x.png"; sourceTree = "<group>"; };
+		4B95F6E514AC6D2900CCFC42 /* EasyNav_Icon_Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Icon_Spotlight.png; sourceTree = "<group>"; };
+		4B95F6E714AC6D4700CCFC42 /* EasyNav_Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Splashscreen.png; sourceTree = "<group>"; };
+		4B95F6E914AC6D5000CCFC42 /* EasyNav_Splashscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasyNav_Splashscreen@2x.png"; sourceTree = "<group>"; };
+		4B95F6EB14AD18E600CCFC42 /* EasyNav_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasyNav_Icon@2x.png"; sourceTree = "<group>"; };
+		4B95F6ED14AD1A6E00CCFC42 /* background-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-1.png"; sourceTree = "<group>"; };
 		4B9FC48C146177B30078B78C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		4B9FC48F146177CA0078B78C /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		4B9FC491146177CF0078B78C /* location_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_background.png; sourceTree = "<group>"; };
 		4B9FC493146177D60078B78C /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		4B9FC495146177DC0078B78C /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		4B9FC497146177E10078B78C /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
-		4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Icon_v2.png; sourceTree = "<group>"; };
-		4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Splashscreen.png; sourceTree = "<group>"; };
 		4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4BF4ACF414619C19000217C1 /* TSHeadingCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHeadingCalculator.h; sourceTree = "<group>"; };
 		4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHeadingCalculator.m; sourceTree = "<group>"; };
@@ -476,6 +488,20 @@
 			path = AdMob;
 			sourceTree = "<group>";
 		};
+		4B95F6DC14AC6CCE00CCFC42 /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B95F6E714AC6D4700CCFC42 /* EasyNav_Splashscreen.png */,
+				4B95F6E914AC6D5000CCFC42 /* EasyNav_Splashscreen@2x.png */,
+				4B95F6DD14AC6CE600CCFC42 /* EasyNav_Icon.png */,
+				4B95F6DF14AC6D0B00CCFC42 /* EasyNav_Icon@2x.png */,
+				4B95F6E114AC6D1700CCFC42 /* iTunesArtwork */,
+				4B95F6E514AC6D2900CCFC42 /* EasyNav_Icon_Spotlight.png */,
+				4B95F6E314AC6D1E00CCFC42 /* EasyNav_Icon_Spotlight@2x.png */,
+			);
+			name = "App Icons";
+			sourceTree = "<group>";
+		};
 		4B9FC48E146177B80078B78C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,8 +512,8 @@
 				4B9FC493146177D60078B78C /* play.png */,
 				4B9FC495146177DC0078B78C /* pause.png */,
 				4B9FC497146177E10078B78C /* stop.png */,
-				4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */,
-				4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */,
+				4B95F6ED14AD1A6E00CCFC42 /* background-1.png */,
+				4B95F6DC14AC6CCE00CCFC42 /* App Icons */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -495,6 +521,7 @@
 		88085E5B13F3A93000E8E91A = {
 			isa = PBXGroup;
 			children = (
+				4B95F6EB14AD18E600CCFC42 /* EasyNav_Icon@2x.png */,
 				88085E7013F3A93000E8E91A /* EasyNav */,
 				88085E6913F3A93000E8E91A /* Frameworks */,
 				4B782E9414ABF4A600D51CAA /* Tests */,
@@ -663,8 +690,6 @@
 				4B47609114ABB86900663DBC /* play.png in Resources */,
 				4B47609214ABB86900663DBC /* pause.png in Resources */,
 				4B47609314ABB86900663DBC /* stop.png in Resources */,
-				4B47609414ABB86900663DBC /* EasyNav_Icon_v2.png in Resources */,
-				4B47609514ABB86900663DBC /* EasyNav_Splashscreen.png in Resources */,
 				4B47609614ABB86900663DBC /* README.txt in Resources */,
 				4B47609714ABB86900663DBC /* AdWhirlWebBrowser.xib in Resources */,
 			);
@@ -682,12 +707,19 @@
 				4B9FC494146177D60078B78C /* play.png in Resources */,
 				4B9FC496146177DC0078B78C /* pause.png in Resources */,
 				4B9FC498146177E10078B78C /* stop.png in Resources */,
-				4B9FC49A146177E80078B78C /* EasyNav_Icon_v2.png in Resources */,
-				4B9FC49C146177F00078B78C /* EasyNav_Splashscreen.png in Resources */,
 				4B7A539714AB2DBB00070396 /* README.txt in Resources */,
 				4B300F8114AB32F500147051 /* AdWhirlWebBrowser.xib in Resources */,
 				4BCE0C4A14AC4E4D00F37E03 /* Settings.bundle in Resources */,
 				4B5A2B8B14AC643700C3C34A /* 07-gear.png in Resources */,
+				4B95F6DE14AC6CE600CCFC42 /* EasyNav_Icon.png in Resources */,
+				4B95F6E014AC6D0B00CCFC42 /* EasyNav_Icon@2x.png in Resources */,
+				4B95F6E214AC6D1700CCFC42 /* iTunesArtwork in Resources */,
+				4B95F6E414AC6D1E00CCFC42 /* EasyNav_Icon_Spotlight@2x.png in Resources */,
+				4B95F6E614AC6D2900CCFC42 /* EasyNav_Icon_Spotlight.png in Resources */,
+				4B95F6E814AC6D4700CCFC42 /* EasyNav_Splashscreen.png in Resources */,
+				4B95F6EA14AC6D5100CCFC42 /* EasyNav_Splashscreen@2x.png in Resources */,
+				4B95F6EC14AD18E600CCFC42 /* EasyNav_Icon@2x.png in Resources */,
+				4B95F6EE14AD1A6E00CCFC42 /* background-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,6 +951,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
 				INFOPLIST_FILE = "EasyNav/EasyNav-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -935,9 +968,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Timothy Shi";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Timothy Shi";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
 				INFOPLIST_FILE = "EasyNav/EasyNav-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -945,7 +980,8 @@
 					"\"$(SRCROOT)/Frameworks/AdMob\"",
 				);
 				PRODUCT_NAME = EasyNav;
-				PROVISIONING_PROFILE = "5F542D25-E2AF-406F-9F43-43CBEB46B401";
+				PROVISIONING_PROFILE = "BFF6743B-6936-4CA9-83BD-AEBF14F93DEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BFF6743B-6936-4CA9-83BD-AEBF14F93DEE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

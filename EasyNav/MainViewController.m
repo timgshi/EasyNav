@@ -14,7 +14,7 @@
 #define MILES_PER_METER 0.000621371192
 
 
-@interface MainViewController()
+@interface MainViewController() <UIAlertViewDelegate>
 {
     NSString *_previousSearchText;
 }
@@ -306,10 +306,12 @@
                                                         message:@"Please search for a destination first" 
                                                        delegate:nil 
                                               cancelButtonTitle:@"Ok" 
-                                              otherButtonTitles: nil];
+                                              otherButtonTitles:nil];
         [alert show];
     }
 }
+
+
 
 - (void)stopNavigation
 {
@@ -401,15 +403,33 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [FoursquareFetcher foursqureVenuesForQuery:searchBar.text location:_currentLocation completionBlock:^(NSArray *venues){
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        [self.resultsArray removeAllObjects];
-        [self.resultsArray addObjectsFromArray:venues];
-        self.resultsArray = [FoursquareFetcher sortFoursquareVenues:self.resultsArray isAscending:YES];
-        [self.searchDisplayController.searchResultsTableView reloadData];
-    }];
-     
+    if ([CLLocationManager locationServicesEnabled]) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        [FoursquareFetcher foursqureVenuesForQuery:searchBar.text location:_currentLocation completionBlock:^(NSArray *venues){
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            [self.resultsArray removeAllObjects];
+            [self.resultsArray addObjectsFromArray:venues];
+            self.resultsArray = [FoursquareFetcher sortFoursquareVenues:self.resultsArray isAscending:YES];
+            [self.searchDisplayController.searchResultsTableView reloadData];
+        }];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" 
+                                                        message:@"You must have location services enabled to search for a location" 
+                                                       delegate:self 
+                                              cancelButtonTitle:@"Cancel" 
+                                              otherButtonTitles: @"Settings", nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView.title isEqualToString:@"Location Services"]) {
+        if (buttonIndex == 1) {
+            NSURL *locationServicesURL = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+            [[UIApplication sharedApplication] openURL:locationServicesURL];
+        }
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate Methods
@@ -497,12 +517,12 @@
     return self;
 }
 
-#ifndef DEBUG
-- (BOOL)adWhirlTestMode
-{
-    return YES;
-}
-#endif
+//#ifndef DEBUG
+//- (BOOL)adWhirlTestMode
+//{
+//    return YES;
+//}
+//#endif
 
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView
 {

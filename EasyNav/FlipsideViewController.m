@@ -65,6 +65,14 @@
     return 1;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"www.easynavapp.com \n\n Developed by Tim Shi \n @timothyshi \n Designed by Eric Ertmann \n @bonatapus";
+    }
+    return @"";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Settings Cell";
