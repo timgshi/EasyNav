@@ -7,6 +7,7 @@
 //
 
 #import "EasyNavAppDelegate.h"
+#import "ENTestController.h"
 
 @implementation EasyNavAppDelegate
 
@@ -16,7 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:kTestflightTeamID];
+//    [TestFlight takeOff:kTestflightTeamID];
+//#if RUN_KIF_TESTS
+//    [[ENTestController sharedInstance] startTestingWithCompletionBlock:^{
+//        // Exit after the tests complete so that CI knows we're done
+//        exit([[ENTestController sharedInstance] failureCount]);
+//    }];
+//#endif
     return YES;
 }
 

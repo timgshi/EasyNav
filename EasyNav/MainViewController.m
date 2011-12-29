@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "FoursquareFetcher.h"
 #import "TSHeadingCalculator.h"
+#import "ENTestController.h"
 
 #define MILES_PER_METER 0.000621371192
 
@@ -115,6 +116,13 @@
     [_distanceUnitsLabel setHidden:hidden];
 }
 
+- (void)setupAccessibility
+{
+    [self.searchDisplayController setAccessibilityTraits:UIAccessibilityTraitSearchField];
+    [self.searchDisplayController.searchBar setAccessibilityLabel:@"Search Bar"];
+    [self.searchDisplayController.searchResultsTableView setAccessibilityLabel:@"Results Tableview"];
+}
+
 #define PREFERRED_UNITS @"Preferred Units"
 
 - (void)viewDidLoad
@@ -151,7 +159,7 @@
          name:UIApplicationWillEnterForegroundNotification
          object:nil];
     }
-
+    [self setupAccessibility];
 }
 
 - (void)viewDidUnload
@@ -187,6 +195,12 @@
     [self.adWhirlView setFrame:adFrame];
     [self.view addSubview:self.adWhirlView];
     [self adjustAdSize];
+#if RUN_KIF_TESTS
+    [[ENTestController sharedInstance] startTestingWithCompletionBlock:^{
+        // Exit after the tests complete so that CI knows we're done
+        exit([[ENTestController sharedInstance] failureCount]);
+    }];
+#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -335,6 +349,7 @@
         cell.textLabel.text = @"";
         cell.detailTextLabel.text = @"";
     }
+    [cell setAccessibilityLabel:cell.textLabel.text];
     return cell;
 }
 
