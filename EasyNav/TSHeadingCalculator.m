@@ -23,10 +23,7 @@
     double y = lon2 - lon1;
     double x = lat2 - lat1;
     bearing = atan2(y, x);
-    NSLog(@"Bearing rads: %f", bearing);
     bearing = bearing * (180 / M_PI);
-    NSLog(@"Bearing pre mod: %f", bearing);
-    
     bearing = fmod((bearing + 360), 360);
     return bearing;
 }
