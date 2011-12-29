@@ -8,7 +8,7 @@
 			<key>DefaultValue</key>
 			<false/>
 			<key>Key</key>
-			<string>metric_preference</string>
+			<string>unitsPreference</string>
 			<key>Title</key>
 			<string>Use Metric System</string>
 			<key>Type</key>

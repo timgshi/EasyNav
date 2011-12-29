@@ -15,8 +15,48 @@
 
 #define kTestflightTeamID @"bec48ec49683f9bd58d587615fca9894_MjQ3NDAyMDExLTExLTAxIDIzOjIzOjMwLjM0NjI0Mg" 
 
+- (void)setupPreferences
+{
+    NSString *unitsPrefKey = kUNITS_PREF_KEY;
+    id testObj = [[NSUserDefaults standardUserDefaults] objectForKey:unitsPrefKey];
+	if (!testObj)
+	{
+		// no default values have been set, create them here based on what's in our Settings bundle info
+		//
+		NSString *pathStr = [[NSBundle mainBundle] bundlePath];
+		NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+		NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+        
+		NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
+		NSArray *prefSpecifierArray = [settingsDict objectForKey:@"PreferenceSpecifiers"];
+        
+		NSDictionary *prefItem;
+        
+        NSNumber *unitsPreferenceDefault;
+        
+		for (prefItem in prefSpecifierArray)
+		{
+			NSString *keyValueStr = [prefItem objectForKey:@"Key"];
+			id defaultValue = [prefItem objectForKey:@"DefaultValue"];
+			if ([keyValueStr isEqualToString:unitsPrefKey]) {
+                unitsPreferenceDefault = defaultValue;
+            }
+		}
+        
+		// since no default values have been set (i.e. no preferences file created), create it here		
+		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     unitsPreferenceDefault, unitsPrefKey,
+                                     nil];
+        
+		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self setupPreferences];
 //    [TestFlight takeOff:kTestflightTeamID];
 //#if RUN_KIF_TESTS
 //    [[ENTestController sharedInstance] startTestingWithCompletionBlock:^{
