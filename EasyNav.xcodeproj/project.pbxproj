@@ -41,6 +41,7 @@
 		4B300FA614AB332400147051 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9C14AB332400147051 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B300FA914AB348400147051 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FA814AB348400147051 /* MessageUI.framework */; };
 		4B300FAB14AB349000147051 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FAA14AB349000147051 /* SystemConfiguration.framework */; };
+		4B3D24E014AC0B8F00190027 /* KIFTestScenario+ENAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3D24DF14AC0B8F00190027 /* KIFTestScenario+ENAdditions.m */; };
 		4B47605714ABB86900663DBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7613F3A93000E8E91A /* main.m */; };
 		4B47605814ABB86900663DBC /* EasyNavAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7A13F3A93000E8E91A /* EasyNavAppDelegate.m */; };
 		4B47605914ABB86900663DBC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E8013F3A93000E8E91A /* MainViewController.m */; };
@@ -217,6 +218,8 @@
 		4B300FA714AB342B00147051 /* AdWhirlAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdNetworkAdapter.h; sourceTree = "<group>"; };
 		4B300FA814AB348400147051 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4B300FAA14AB349000147051 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4B3D24DE14AC0B8F00190027 /* KIFTestScenario+ENAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestScenario+ENAdditions.h"; sourceTree = "<group>"; };
+		4B3D24DF14AC0B8F00190027 /* KIFTestScenario+ENAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestScenario+ENAdditions.m"; sourceTree = "<group>"; };
 		4B47604B14ABB7FA00663DBC /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 		4B47609B14ABB86900663DBC /* EasyNav (Integration Tests).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyNav (Integration Tests).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B47609D14ABB86A00663DBC /* EasyNav copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EasyNav copy-Info.plist"; path = "/Users/timshi/Developer/EasyNav/EasyNav copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -448,6 +451,8 @@
 			children = (
 				4B782E9114ABF4A000D51CAA /* ENTestController.h */,
 				4B782E9214ABF4A000D51CAA /* ENTestController.m */,
+				4B3D24DE14AC0B8F00190027 /* KIFTestScenario+ENAdditions.h */,
+				4B3D24DF14AC0B8F00190027 /* KIFTestScenario+ENAdditions.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -765,6 +770,7 @@
 				4B300FA414AB332400147051 /* CJSONScanner.m in Sources */,
 				4B300FA514AB332400147051 /* CJSONSerializer.m in Sources */,
 				4B300FA614AB332400147051 /* CSerializedJSONData.m in Sources */,
+				4B3D24E014AC0B8F00190027 /* KIFTestScenario+ENAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +820,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-all-load",
+					"-all_load",
 				);
 				PRODUCT_NAME = "EasyNav (Integration Tests)";
 				WRAPPER_EXTENSION = app;
@@ -840,7 +846,7 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-all-load",
+					"-all_load",
 				);
 				PRODUCT_NAME = "EasyNav (Integration Tests)";
 				WRAPPER_EXTENSION = app;

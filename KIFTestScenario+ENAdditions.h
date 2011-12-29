@@ -10,4 +10,6 @@
 
 @interface KIFTestScenario (ENAdditions)
 
++ (id)scenarioToTestSearchBar;
+
 @end

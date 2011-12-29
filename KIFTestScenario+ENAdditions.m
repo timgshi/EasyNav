@@ -7,7 +7,15 @@
 //
 
 #import "KIFTestScenario+ENAdditions.h"
+#import "KIFTestStep.h"
 
 @implementation KIFTestScenario (ENAdditions)
+
++ (id)scenarioToTestSearchBar
+{
+    KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Tests a search"];
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Search Bar"]];
+    return scenario;
+}
 
 @end

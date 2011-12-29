@@ -116,6 +116,13 @@
     [_distanceUnitsLabel setHidden:hidden];
 }
 
+- (void)setupAccessibility
+{
+    [self.searchDisplayController setAccessibilityTraits:UIAccessibilityTraitSearchField];
+    [self.searchDisplayController.searchBar setAccessibilityLabel:@"Search Bar"];
+    [self.searchDisplayController.searchResultsTableView setAccessibilityLabel:@"Results Tableview"];
+}
+
 #define PREFERRED_UNITS @"Preferred Units"
 
 - (void)viewDidLoad
@@ -152,6 +159,7 @@
          name:UIApplicationWillEnterForegroundNotification
          object:nil];
     }
+    [self setupAccessibility];
 }
 
 - (void)viewDidUnload
@@ -341,6 +349,7 @@
         cell.textLabel.text = @"";
         cell.detailTextLabel.text = @"";
     }
+    [cell setAccessibilityLabel:cell.textLabel.text];
     return cell;
 }
 
