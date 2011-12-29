@@ -144,9 +144,9 @@
     [self.searchDisplayController.searchBar setBackgroundColor:[UIColor blackColor]];
     [self.searchDisplayController.searchBar setTranslucent:YES];
     [self.searchDisplayController.searchBar setTintColor:[UIColor clearColor]];
-#ifndef DEBUG
-    CLLocation *origin = [[CLLocation alloc] initWithLatitude:0 longitude:0];
-    CLLocation *destination = [[CLLocation alloc] initWithLatitude:0 longitude:-45];
+#ifdef DEBUG
+    CLLocation *origin = [[CLLocation alloc] initWithLatitude:30 longitude:29];
+    CLLocation *destination = [[CLLocation alloc] initWithLatitude:30 longitude:30];
     double testbearing = [TSHeadingCalculator bearingToDestination:destination fromOrigin:origin];
     NSLog(@"BEARING TEST \nOrigin: %@ \nDestination: %@ \nBearing: %f", origin, destination, testbearing);
 #endif
@@ -240,6 +240,15 @@
     return address;
 }
 
+- (CLLocation *)locationFromVenue:(NSDictionary *)venue
+{
+    NSDictionary *location = [venue objectForKey:@"location"];
+    double lat = [[location objectForKey:@"lat"] doubleValue];
+    double lng = [[location objectForKey:@"lng"] doubleValue];
+    CLLocation *venueLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lng]; 
+    return venueLocation;
+}
+
 - (NSString *)distanceFromCurrentLocationToLocation:(NSDictionary *)location
 {
     NSNumber *distance = nil;
@@ -272,7 +281,11 @@
 
 - (void)updateCompassDisplay
 {
-    
+    double bearing = [TSHeadingCalculator bearingToDestination:[self locationFromVenue:_selectedVenue] fromOrigin:self.currentLocation];
+    double heading = self.currentHeading.magneticHeading;
+    double diff = heading - bearing;
+    double radDiff = diff * (M_PI / 180) * -1;
+    self.arrowImageView.transform = CGAffineTransformMakeRotation(radDiff);
 }
 
 - (void)updateNavigationDisplay
