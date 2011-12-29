@@ -41,7 +41,7 @@
 		4B300FA614AB332400147051 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B300F9C14AB332400147051 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B300FA914AB348400147051 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FA814AB348400147051 /* MessageUI.framework */; };
 		4B300FAB14AB349000147051 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B300FAA14AB349000147051 /* SystemConfiguration.framework */; };
-		4B3D24E014AC0B8F00190027 /* KIFTestScenario+ENAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3D24DF14AC0B8F00190027 /* KIFTestScenario+ENAdditions.m */; };
+		4B3654BB14AC2FFD00CEE8F8 /* KIFTestScenario+ENAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3D24DF14AC0B8F00190027 /* KIFTestScenario+ENAdditions.m */; };
 		4B47605714ABB86900663DBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7613F3A93000E8E91A /* main.m */; };
 		4B47605814ABB86900663DBC /* EasyNavAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E7A13F3A93000E8E91A /* EasyNavAppDelegate.m */; };
 		4B47605914ABB86900663DBC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88085E8013F3A93000E8E91A /* MainViewController.m */; };
@@ -727,6 +727,7 @@
 				4B47607914ABB86900663DBC /* CJSONSerializer.m in Sources */,
 				4B47607A14ABB86900663DBC /* CSerializedJSONData.m in Sources */,
 				4B782E9514ABF63C00D51CAA /* ENTestController.m in Sources */,
+				4B3654BB14AC2FFD00CEE8F8 /* KIFTestScenario+ENAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,7 +771,6 @@
 				4B300FA414AB332400147051 /* CJSONScanner.m in Sources */,
 				4B300FA514AB332400147051 /* CJSONSerializer.m in Sources */,
 				4B300FA614AB332400147051 /* CSerializedJSONData.m in Sources */,
-				4B3D24E014AC0B8F00190027 /* KIFTestScenario+ENAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +799,7 @@
 		4B47609914ABB86900663DBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Timothy Shi";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -823,6 +824,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "EasyNav (Integration Tests)";
+				PROVISIONING_PROFILE = "2D3FA4BA-222D-4815-B9DE-B361D36F9FA1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -830,6 +832,7 @@
 		4B47609A14ABB86900663DBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Timothy Shi";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasyNav/EasyNav-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -849,6 +852,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "EasyNav (Integration Tests)";
+				PROVISIONING_PROFILE = "2D3FA4BA-222D-4815-B9DE-B361D36F9FA1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
