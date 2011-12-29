@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
 #import "TestFlight.h"
 #define kEN_ADWHIRL_KEY @"15d115fb4bb744b8bffaee8b07f0e83b"
+#define kUNITS_PREF_KEY @"unitsPreference"
 #endif

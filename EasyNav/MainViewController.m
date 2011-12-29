@@ -32,7 +32,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *distanceUnitsLabel;
 
-@property BOOL isNavigating, usingMeters, isSearching;
+@property (nonatomic) BOOL usingMeters;
+@property BOOL isNavigating, isSearching;
 
 @property (strong, nonatomic) AdWhirlView *adWhirlView;
 
@@ -98,6 +99,11 @@
     return _adWhirlView;
 }
 
+- (BOOL)usingMeters
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kUNITS_PREF_KEY];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -129,16 +135,6 @@
 {
     [super viewDidLoad];
     isNavigating = NO;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *storedUnitPreference = [defaults objectForKey:PREFERRED_UNITS];
-    if (storedUnitPreference) {
-        usingMeters = [storedUnitPreference boolValue];
-    } else {
-        storedUnitPreference = [NSNumber numberWithBool:NO];
-        [defaults setObject:storedUnitPreference forKey:PREFERRED_UNITS];
-        [defaults synchronize];
-        usingMeters = NO;
-    }
 	[self setLocationInfoHidden:YES];
     [self.searchDisplayController.searchBar setBarStyle:UIBarStyleBlack];
     [self.searchDisplayController.searchBar setBackgroundColor:[UIColor blackColor]];
@@ -256,7 +252,7 @@
         double lng = [[location objectForKey:@"lng"] doubleValue];
         CLLocation *venueLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
         CLLocationDistance distanceFromHere = [venueLocation distanceFromLocation:_currentLocation];
-        if (usingMeters) {
+        if (self.usingMeters) {
             distance = [NSNumber numberWithDouble:distanceFromHere];
         } else {
             double milesFromHere = distanceFromHere * MILES_PER_METER;
@@ -273,7 +269,7 @@
 - (void)updateDistanceDisplay
 {
     NSString *distance = [self distanceFromCurrentLocationToLocation:[_selectedVenue objectForKey:@"location"]];
-    NSString *units = (usingMeters) ? @"m" : @"mi";
+    NSString *units = (self.usingMeters) ? @"m" : @"mi";
     [_distanceLabel setText:distance];
     [_distanceUnitsLabel setText:units];
 }
@@ -356,7 +352,7 @@
         double milesFromHere = distanceFromHere * MILES_PER_METER;
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setPositiveFormat:@"0.##"];
-        if (usingMeters) {
+        if (self.usingMeters) {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ meters away", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:distanceFromHere]]];
         } else {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ miles away", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:milesFromHere]]];
@@ -560,6 +556,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flipsideViewControllerDidFinish:) name:@"flipsideViewControllerDidFinish" object:nil];
     }
 }
 

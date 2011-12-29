@@ -14,9 +14,9 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 
-@interface FlipsideViewController : UIViewController
+@interface FlipsideViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> flipDelegate;
 
 - (IBAction)done:(id)sender;
 

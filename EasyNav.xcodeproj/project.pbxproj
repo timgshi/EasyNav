@@ -106,6 +106,7 @@
 		4B47609614ABB86900663DBC /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A539514AB2DBB00070396 /* README.txt */; };
 		4B47609714ABB86900663DBC /* AdWhirlWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B300F6514AB32F500147051 /* AdWhirlWebBrowser.xib */; };
 		4B47609E14ABB8F900663DBC /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B47605314ABB7FA00663DBC /* libKIF.a */; };
+		4B5A2B8B14AC643700C3C34A /* 07-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5A2B8A14AC643700C3C34A /* 07-gear.png */; };
 		4B782E9514ABF63C00D51CAA /* ENTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B782E9214ABF4A000D51CAA /* ENTestController.m */; };
 		4B7A538414AB2B2600070396 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538314AB2B2600070396 /* AddressBook.framework */; };
 		4B7A538614AB2B3000070396 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7A538514AB2B2F00070396 /* AudioToolbox.framework */; };
@@ -122,6 +123,7 @@
 		4B9FC498146177E10078B78C /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC497146177E10078B78C /* stop.png */; };
 		4B9FC49A146177E80078B78C /* EasyNav_Icon_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */; };
 		4B9FC49C146177F00078B78C /* EasyNav_Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */; };
+		4BCE0C4A14AC4E4D00F37E03 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */; };
 		4BF4ACF614619C19000217C1 /* TSHeadingCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */; };
 		88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
 		88085E6D13F3A93000E8E91A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6C13F3A93000E8E91A /* Foundation.framework */; };
@@ -223,6 +225,7 @@
 		4B47604B14ABB7FA00663DBC /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 		4B47609B14ABB86900663DBC /* EasyNav (Integration Tests).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyNav (Integration Tests).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B47609D14ABB86A00663DBC /* EasyNav copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EasyNav copy-Info.plist"; path = "/Users/timshi/Developer/EasyNav/EasyNav copy-Info.plist"; sourceTree = "<absolute>"; };
+		4B5A2B8A14AC643700C3C34A /* 07-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-gear.png"; sourceTree = "<group>"; };
 		4B782E9114ABF4A000D51CAA /* ENTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENTestController.h; sourceTree = "<group>"; };
 		4B782E9214ABF4A000D51CAA /* ENTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENTestController.m; sourceTree = "<group>"; };
 		4B7A538314AB2B2600070396 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -246,6 +249,7 @@
 		4B9FC497146177E10078B78C /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		4B9FC499146177E80078B78C /* EasyNav_Icon_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Icon_v2.png; sourceTree = "<group>"; };
 		4B9FC49B146177F00078B78C /* EasyNav_Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasyNav_Splashscreen.png; sourceTree = "<group>"; };
+		4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4BF4ACF414619C19000217C1 /* TSHeadingCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHeadingCalculator.h; sourceTree = "<group>"; };
 		4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHeadingCalculator.m; sourceTree = "<group>"; };
 		88085E6613F3A93000E8E91A /* EasyNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -475,6 +479,7 @@
 		4B9FC48E146177B80078B78C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				4B5A2B8A14AC643700C3C34A /* 07-gear.png */,
 				4B9FC48C146177B30078B78C /* background.png */,
 				4B9FC48F146177CA0078B78C /* arrow.png */,
 				4B9FC491146177CF0078B78C /* location_background.png */,
@@ -547,6 +552,7 @@
 				88085E8313F3A93000E8E91A /* FlipsideViewController.m */,
 				88085E9213F4D89200E8E91A /* FoursquareFetcher.h */,
 				88085E9313F4D89200E8E91A /* FoursquareFetcher.m */,
+				4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */,
 				88085E7113F3A93000E8E91A /* Supporting Files */,
 			);
 			path = EasyNav;
@@ -680,6 +686,8 @@
 				4B9FC49C146177F00078B78C /* EasyNav_Splashscreen.png in Resources */,
 				4B7A539714AB2DBB00070396 /* README.txt in Resources */,
 				4B300F8114AB32F500147051 /* AdWhirlWebBrowser.xib in Resources */,
+				4BCE0C4A14AC4E4D00F37E03 /* Settings.bundle in Resources */,
+				4B5A2B8B14AC643700C3C34A /* 07-gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 
 @implementation FlipsideViewController
 
-@synthesize delegate = _delegate;
+@synthesize flipDelegate = _flipDelegate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -23,6 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Settings";
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -59,11 +60,49 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Settings Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+    }
+    cell.textLabel.text = @"Use Metric System";
+    UISwitch *metricSwitch = [[UISwitch alloc] init];
+    CGRect switchFrame = CGRectMake(cell.frame.size.width - (metricSwitch.frame.size.width + 25), 8, metricSwitch.frame.size.width, metricSwitch.frame.size.height);
+    metricSwitch.frame = switchFrame;
+    metricSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:kUNITS_PREF_KEY];
+    [metricSwitch addTarget:self action:@selector(metricSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    [cell.contentView addSubview:metricSwitch];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 #pragma mark - Actions
 
 - (IBAction)done:(id)sender
 {
-    [self.delegate flipsideViewControllerDidFinish:self];
+//    [self.flipDelegate flipsideViewControllerDidFinish:self];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"flipsideViewControllerDidFinish" object:nil]];
+}
+
+- (void)metricSwitchChanged:(id)sender
+{
+    if ([sender isKindOfClass:[UISwitch class]]) {
+        UISwitch *metricSwitch = (UISwitch *)sender;
+        BOOL useMetrics = metricSwitch.on;
+        [[NSUserDefaults standardUserDefaults] setBool:useMetrics forKey:kUNITS_PREF_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 @end
