@@ -27,22 +27,23 @@
 
 + (void)foursqureVenuesForQuery:(NSString *)query location:(CLLocation *)currentLocation completionBlock:(void (^)(NSArray *venues))block
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSString *requestString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&query=%@&client_id=%@&client_secret=%@&v=20110808", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, query, FoursquareID, FoursquareSecret];
-        requestString = [requestString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSURL *requestURL = [NSURL URLWithString:requestString];
-        NSString *response = [NSString stringWithContentsOfURL:requestURL encoding:NSUTF8StringEncoding error:nil];
-        const char *utfstring = [response UTF8String];
-        NSData *data = [NSData dataWithBytes:utfstring length:strlen(utfstring)];
-        id responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        //NSLog(@"DICTIONARY: %@", [responseDict description]);
-        NSLog(@"Class: %@", [responseDict class]);
-        NSDictionary *dict = (NSDictionary *)responseDict;
-        NSLog(@"Keys: %@", [dict allKeys]);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            block([[dict objectForKey:@"response"] objectForKey:@"venues"]);
+    if (currentLocation && query) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            NSString *requestString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&query=%@&client_id=%@&client_secret=%@&v=20110808", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, query, FoursquareID, FoursquareSecret];
+            requestString = [requestString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSURL *requestURL = [NSURL URLWithString:requestString];
+            NSString *response = [NSString stringWithContentsOfURL:requestURL encoding:NSUTF8StringEncoding error:nil];
+            const char *utfstring = [response UTF8String];
+            NSData *data = [NSData dataWithBytes:utfstring length:strlen(utfstring)];
+            id responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSDictionary *dict = (NSDictionary *)responseDict;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block([[dict objectForKey:@"response"] objectForKey:@"venues"]);
+            });
         });
-    });
+    } else {
+        block(nil);
+    }
 }
 
 + (NSMutableArray *)sortFoursquareVenues:(NSMutableArray *)venues isAscending:(BOOL)ascending
