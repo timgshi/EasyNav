@@ -152,12 +152,6 @@
          name:UIApplicationWillEnterForegroundNotification
          object:nil];
     }
-#if RUN_KIF_TESTS
-    [[ENTestController sharedInstance] startTestingWithCompletionBlock:^{
-        // Exit after the tests complete so that CI knows we're done
-        exit([[ENTestController sharedInstance] failureCount]);
-    }];
-#endif
 }
 
 - (void)viewDidUnload
@@ -193,6 +187,12 @@
     [self.adWhirlView setFrame:adFrame];
     [self.view addSubview:self.adWhirlView];
     [self adjustAdSize];
+#if RUN_KIF_TESTS
+    [[ENTestController sharedInstance] startTestingWithCompletionBlock:^{
+        // Exit after the tests complete so that CI knows we're done
+        exit([[ENTestController sharedInstance] failureCount]);
+    }];
+#endif
 }
 
 - (void)viewWillDisappear:(BOOL)animated
