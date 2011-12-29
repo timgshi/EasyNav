@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "FoursquareFetcher.h"
 #import "TSHeadingCalculator.h"
+#import "ENTestController.h"
 
 #define MILES_PER_METER 0.000621371192
 
@@ -151,7 +152,12 @@
          name:UIApplicationWillEnterForegroundNotification
          object:nil];
     }
-
+#if RUN_KIF_TESTS
+    [[ENTestController sharedInstance] startTestingWithCompletionBlock:^{
+        // Exit after the tests complete so that CI knows we're done
+        exit([[ENTestController sharedInstance] failureCount]);
+    }];
+#endif
 }
 
 - (void)viewDidUnload

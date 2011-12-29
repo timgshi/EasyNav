@@ -10,4 +10,9 @@
 
 @implementation ENTestController
 
+- (void)initializeScenarios
+{
+    [super initializeScenarios];
+}
+
 @end
