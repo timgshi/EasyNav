@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1934" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="931"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
         <scene sceneID="5">
@@ -90,6 +90,10 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="search_indicator.png" id="cuP-Km-gDv">
+                                <rect key="frame" x="27" y="45" width="267" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -101,6 +105,7 @@
                         <outlet property="locationBackgroundImageView" destination="C1Q-2W-4Rs" id="oK5-hk-liL"/>
                         <outlet property="locationNameLabel" destination="d4h-g5-2x5" id="Dby-W8-x4b"/>
                         <outlet property="searchDisplayController" destination="18" id="20"/>
+                        <outlet property="searchIndicatorImageView" destination="cuP-Km-gDv" id="qJZ-zh-Z3c"/>
                     </connections>
                 </viewController>
                 <searchDisplayController id="18">
@@ -169,10 +174,32 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.png" width="550" height="550"/>
+        <image name="arrow.png" width="275" height="275"/>
         <image name="background-1.png" width="640" height="960"/>
         <image name="location_background.png" width="640" height="108"/>
+        <image name="search_indicator.png" width="267" height="64"/>
     </resources>
+    <classes>
+        <class className="FlipsideViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="flipDelegate"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="arrowImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="distanceUnitsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationAddressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationBackgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="locationNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="searchIndicatorImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
