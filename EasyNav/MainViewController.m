@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "FoursquareFetcher.h"
 #import "TSHeadingCalculator.h"
-#import "ENTestController.h"
 
 #define MILES_PER_METER 0.000621371192
 
