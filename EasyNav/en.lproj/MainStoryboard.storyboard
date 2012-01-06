@@ -13,11 +13,12 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <userGuides>
                             <userLayoutGuide location="11" affinity="minX"/>
+                            <userLayoutGuide location="252" affinity="minY"/>
                         </userGuides>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-1.png" id="gOw-GT-RQS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="gOw-GT-RQS">
+                                <rect key="frame" x="0.0" y="-20" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="10">
@@ -47,7 +48,7 @@
                                 </connections>
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow.png" id="iWt-0a-Z42">
-                                <rect key="frame" x="20" y="130" width="280" height="261"/>
+                                <rect key="frame" x="23" y="114" width="275" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <integer key="isElement" value="1"/>
@@ -73,7 +74,7 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Mfr-oV-tzZ">
-                                <rect key="frame" x="80" y="191" width="160" height="105"/>
+                                <rect key="frame" x="80" y="179" width="160" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +83,7 @@
                                 <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mi" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="v7i-ph-21X">
-                                <rect key="frame" x="114" y="236" width="92" height="105"/>
+                                <rect key="frame" x="114" y="224" width="92" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,7 +92,7 @@
                                 <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="search_indicator.png" id="cuP-Km-gDv">
-                                <rect key="frame" x="27" y="45" width="267" height="64"/>
+                                <rect key="frame" x="19.5" y="43.5" width="282" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -175,9 +176,9 @@
     </scenes>
     <resources>
         <image name="arrow.png" width="275" height="275"/>
-        <image name="background-1.png" width="640" height="960"/>
+        <image name="background.png" width="320" height="480"/>
         <image name="location_background.png" width="640" height="108"/>
-        <image name="search_indicator.png" width="267" height="64"/>
+        <image name="search_indicator.png" width="282" height="67"/>
     </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UITableViewController">
