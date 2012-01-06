@@ -48,14 +48,14 @@
                                 </connections>
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow.png" id="iWt-0a-Z42">
-                                <rect key="frame" x="23" y="114" width="275" height="275"/>
+                                <rect key="frame" x="23" y="115" width="275" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <integer key="isElement" value="1"/>
                                 </accessibility>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="location_background.png" id="C1Q-2W-4Rs">
-                                <rect key="frame" x="-15" y="62" width="350" height="55"/>
+                                <rect key="frame" x="21" y="58" width="278" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" minimumFontSize="10" id="d4h-g5-2x5">
@@ -177,7 +177,7 @@
     <resources>
         <image name="arrow.png" width="275" height="275"/>
         <image name="background.png" width="320" height="480"/>
-        <image name="location_background.png" width="640" height="108"/>
+        <image name="location_background.png" width="278" height="55"/>
         <image name="search_indicator.png" width="282" height="67"/>
     </resources>
     <classes>
