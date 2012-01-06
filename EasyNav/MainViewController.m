@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *distanceUnitsLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *searchIndicatorImageView;
 
 @property (nonatomic) BOOL usingMeters;
 @property BOOL isNavigating, isSearching;
@@ -55,6 +56,7 @@
 @synthesize arrowImageView = _arrowImageView;
 @synthesize distanceLabel = _distanceLabel;
 @synthesize distanceUnitsLabel = _distanceUnitsLabel;
+@synthesize searchIndicatorImageView = _searchIndicatorImageView;
 @synthesize isNavigating, usingMeters, isSearching;
 @synthesize adWhirlView = _adWhirlView;
 
@@ -114,6 +116,7 @@
 
 - (void)setLocationInfoHidden:(BOOL)hidden
 {
+    [self.searchIndicatorImageView setHidden:!hidden];
     [_locationNameLabel setHidden:hidden];
     [_locationAddressLabel setHidden:hidden];
     [_locationBackgroundImageView setHidden:hidden];
@@ -164,6 +167,7 @@
     [self setArrowImageView:nil];
     [self setDistanceLabel:nil];
     [self setDistanceUnitsLabel:nil];
+    [self setSearchIndicatorImageView:nil];
     [super viewDidUnload];
 }
 
