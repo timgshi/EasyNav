@@ -12,8 +12,9 @@
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <userGuides>
-                            <userLayoutGuide location="11" affinity="minX"/>
+                            <userLayoutGuide location="23" affinity="minX"/>
                             <userLayoutGuide location="252" affinity="minY"/>
+                            <userLayoutGuide location="391" affinity="minY"/>
                         </userGuides>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -94,6 +95,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="search_indicator.png" id="cuP-Km-gDv">
                                 <rect key="frame" x="19.5" y="43.5" width="282" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="stop.png" id="9Xe-TN-2n5">
+                                <rect key="frame" x="21" y="372" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -179,6 +184,7 @@
         <image name="background.png" width="320" height="480"/>
         <image name="location_background.png" width="278" height="55"/>
         <image name="search_indicator.png" width="282" height="67"/>
+        <image name="stop.png" width="19" height="19"/>
     </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UITableViewController">
