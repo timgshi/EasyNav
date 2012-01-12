@@ -37,7 +37,7 @@
                                     <segue destination="94z-da-AIm" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="tVy-Tw-0mt"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" text="" placeholder="Search for a location to begin" id="17">
+                            <searchBar contentMode="redraw" text="" placeholder="Search for a location to begin" showsBookmarkButton="YES" id="17">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,27 +180,6 @@
         <image name="location_background.png" width="278" height="55"/>
         <image name="search_indicator.png" width="282" height="67"/>
     </resources>
-    <classes>
-        <class className="FlipsideViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="flipDelegate"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="arrowImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceUnitsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationAddressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationBackgroundImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="locationNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="searchIndicatorImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

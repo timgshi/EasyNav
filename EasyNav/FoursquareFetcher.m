@@ -15,16 +15,6 @@
 
 @implementation FoursquareFetcher
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-
-    return self;
-}
-
 + (void)foursqureVenuesForQuery:(NSString *)query location:(CLLocation *)currentLocation completionBlock:(void (^)(NSArray *venues))block
 {
     if (currentLocation && query) {
@@ -64,9 +54,6 @@
     }] mutableCopy];
 }
 
-- (void)test
-{  
 
-}
 
 @end
