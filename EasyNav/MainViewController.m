@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "FoursquareFetcher.h"
 #import "TSHeadingCalculator.h"
+#import <MapKit/MapKit.h>
 
 #define MILES_PER_METER 0.000621371192
 
@@ -23,7 +24,6 @@
 @property (strong, nonatomic) CLHeading *currentHeading;
 @property (strong, nonatomic) ADBannerView *bannerView;
 @property (strong, nonatomic) NSDictionary *selectedVenue;
-
 @property (strong, nonatomic) IBOutlet UILabel *locationNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationAddressLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *locationBackgroundImageView;
@@ -31,6 +31,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *distanceUnitsLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *searchIndicatorImageView;
+
+@property (strong, nonatomic) CLGeocoder *geocoder;
 
 @property (nonatomic) BOOL usingMeters;
 @property BOOL isNavigating, isSearching;
@@ -58,6 +60,7 @@
 @synthesize searchIndicatorImageView = _searchIndicatorImageView;
 @synthesize isNavigating, usingMeters, isSearching;
 @synthesize adWhirlView = _adWhirlView;
+@synthesize geocoder = _geocoder;
 
 - (NSMutableArray *)resultsArray
 {
@@ -98,6 +101,14 @@
         _adWhirlView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
     }
     return _adWhirlView;
+}
+
+- (CLGeocoder *)geocoder
+{
+    if (!_geocoder) {
+        _geocoder = [[CLGeocoder alloc] init];
+    }
+    return _geocoder;
 }
 
 - (BOOL)usingMeters
@@ -167,6 +178,7 @@
     [self setDistanceLabel:nil];
     [self setDistanceUnitsLabel:nil];
     [self setSearchIndicatorImageView:nil];
+    [self setGeocoder:nil];
     [super viewDidUnload];
 }
 
@@ -381,6 +393,24 @@
     [self startNavigation];
 }
 
+- (void)searchForAddress:(NSString *)address
+{
+    [self.geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
+        for (CLPlacemark *placemark in placemarks) {
+            NSMutableDictionary *locationDict = [NSMutableDictionary dictionary];
+            [locationDict setObject:[NSNumber numberWithDouble:placemark.location.coordinate.latitude] forKey:@"lat"];
+            [locationDict setObject:[NSNumber numberWithDouble:placemark.location.coordinate.longitude] forKey:@"lng"];
+            [locationDict setObject:[NSString stringWithFormat:@"%@ %@", placemark.subThoroughfare, placemark.thoroughfare] forKey:@"address"];
+            [locationDict setObject:placemark.locality forKey:@"city"];
+            [locationDict setObject:placemark.administrativeArea forKey:@"state"];
+            NSString *addressString = [self addressStringFromLocation:locationDict];
+            NSDictionary *venueDict = [NSDictionary dictionaryWithObjectsAndKeys:locationDict, @"location", addressString, @"name", address, @"searchAddress", @"yes", @"isAddress", nil];
+            [self.resultsArray insertObject:venueDict atIndex:0];
+            [self.searchDisplayController.searchResultsTableView reloadData];
+        }
+    }];
+}
+
 #pragma mark - UISearchDisplayDelegate Methods
 
 
@@ -408,10 +438,21 @@
 {
     if ([CLLocationManager locationServicesEnabled]) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        [self searchForAddress:searchBar.text];
         [FoursquareFetcher foursqureVenuesForQuery:searchBar.text location:_currentLocation completionBlock:^(NSArray *venues){
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            NSMutableArray *tempArray = [NSMutableArray array];
+            for (NSDictionary *dict in self.resultsArray) {
+                NSString *searchAddress = [dict objectForKey:@"searchAddress"];
+                if ([searchAddress isEqualToString:searchBar.text]) {
+                    [tempArray addObject:dict];
+                }
+            }
             [self.resultsArray removeAllObjects];
             [self.resultsArray addObjectsFromArray:venues];
+            for (NSDictionary *dict in tempArray) {
+                [self.resultsArray insertObject:dict atIndex:0];
+            }
             self.resultsArray = [FoursquareFetcher sortFoursquareVenues:self.resultsArray isAscending:YES];
             [self.searchDisplayController.searchResultsTableView reloadData];
         }];
