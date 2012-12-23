@@ -129,6 +129,11 @@
 		4B9FC496146177DC0078B78C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9FC495146177DC0078B78C /* pause.png */; };
 		4BCE0C4A14AC4E4D00F37E03 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */; };
 		4BF4ACF614619C19000217C1 /* TSHeadingCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */; };
+		4BF654441686DAD600CE6042 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654421686DAD600CE6042 /* libGoogleAnalytics_debug.a */; };
+		4BF654451686DAD600CE6042 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654421686DAD600CE6042 /* libGoogleAnalytics_debug.a */; };
+		4BF654461686DAD600CE6042 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654431686DAD600CE6042 /* libGoogleAnalytics.a */; };
+		4BF654471686DAD600CE6042 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654431686DAD600CE6042 /* libGoogleAnalytics.a */; };
+		4BFE0A1714CFC6C70005B608 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFE0A1614CFC6C70005B608 /* CFNetwork.framework */; };
 		88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
 		88085E6D13F3A93000E8E91A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6C13F3A93000E8E91A /* Foundation.framework */; };
 		88085E6F13F3A93000E8E91A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6E13F3A93000E8E91A /* CoreGraphics.framework */; };
@@ -263,6 +268,14 @@
 		4BCE0C4914AC4E4D00F37E03 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4BF4ACF414619C19000217C1 /* TSHeadingCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHeadingCalculator.h; sourceTree = "<group>"; };
 		4BF4ACF514619C19000217C1 /* TSHeadingCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHeadingCalculator.m; sourceTree = "<group>"; };
+		4BF6543D1686DAD600CE6042 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		4BF6543E1686DAD600CE6042 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		4BF6543F1686DAD600CE6042 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		4BF654401686DAD600CE6042 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		4BF654411686DAD600CE6042 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		4BF654421686DAD600CE6042 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		4BF654431686DAD600CE6042 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		4BFE0A1614CFC6C70005B608 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		88085E6613F3A93000E8E91A /* EasyNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88085E6A13F3A93000E8E91A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88085E6C13F3A93000E8E91A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -306,6 +319,8 @@
 				4B47608814ABB86900663DBC /* CoreGraphics.framework in Frameworks */,
 				4B47608914ABB86900663DBC /* libTestFlight.a in Frameworks */,
 				4B47608A14ABB86900663DBC /* libGoogleAdMobAds.a in Frameworks */,
+				4BF654451686DAD600CE6042 /* libGoogleAnalytics_debug.a in Frameworks */,
+				4BF654471686DAD600CE6042 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFE0A1714CFC6C70005B608 /* CFNetwork.framework in Frameworks */,
 				4B300FAB14AB349000147051 /* SystemConfiguration.framework in Frameworks */,
 				4B300FA914AB348400147051 /* MessageUI.framework in Frameworks */,
 				4B7A538C14AB2B5100070396 /* libz.dylib in Frameworks */,
@@ -328,6 +344,8 @@
 				88085E6F13F3A93000E8E91A /* CoreGraphics.framework in Frameworks */,
 				4B054DAA14AB0A9B00897EF4 /* libTestFlight.a in Frameworks */,
 				4B7A539614AB2DBB00070396 /* libGoogleAdMobAds.a in Frameworks */,
+				4BF654441686DAD600CE6042 /* libGoogleAnalytics_debug.a in Frameworks */,
+				4BF654461686DAD600CE6042 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +538,7 @@
 		88085E5B13F3A93000E8E91A = {
 			isa = PBXGroup;
 			children = (
+				4BFE0A1614CFC6C70005B608 /* CFNetwork.framework */,
 				4B95F6EB14AD18E600CCFC42 /* EasyNav_Icon@2x.png */,
 				88085E7013F3A93000E8E91A /* EasyNav */,
 				88085E6913F3A93000E8E91A /* Frameworks */,
@@ -542,6 +561,13 @@
 		88085E6913F3A93000E8E91A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BF6543D1686DAD600CE6042 /* GAI.h */,
+				4BF6543E1686DAD600CE6042 /* GAITrackedViewController.h */,
+				4BF6543F1686DAD600CE6042 /* GAITracker.h */,
+				4BF654401686DAD600CE6042 /* GAITransaction.h */,
+				4BF654411686DAD600CE6042 /* GAITransactionItem.h */,
+				4BF654421686DAD600CE6042 /* libGoogleAnalytics_debug.a */,
+				4BF654431686DAD600CE6042 /* libGoogleAnalytics.a */,
 				4B300F8614AB332400147051 /* TouchJSON */,
 				4B300F4114AB32F500147051 /* AdWhirl */,
 				4B7A538D14AB2DBB00070396 /* AdMob */,

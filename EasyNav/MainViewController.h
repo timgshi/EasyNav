@@ -15,4 +15,6 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate, CLLocationManagerDelegate, ADBannerViewDelegate, AdWhirlDelegate> {
 }
 
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
+
 @end

@@ -10,6 +10,7 @@
 #import "FoursquareFetcher.h"
 #import "TSHeadingCalculator.h"
 #import <MapKit/MapKit.h>
+#import "GANTracker.h"
 
 #define MILES_PER_METER 0.000621371192
 
@@ -44,6 +45,7 @@
 
 
 @implementation MainViewController
+@synthesize stopButton = _stopButton;
 
 @synthesize resultsArray = _resultsArray;
 @synthesize locationManager = _locationManager;
@@ -162,6 +164,7 @@
          name:UIApplicationWillEnterForegroundNotification
          object:nil];
     }
+    [self.stopButton setHidden:YES];
     [self setupAccessibility];
 }
 
@@ -179,6 +182,7 @@
     [self setDistanceUnitsLabel:nil];
     [self setSearchIndicatorImageView:nil];
     [self setGeocoder:nil];
+    [self setStopButton:nil];
     [super viewDidUnload];
 }
 
@@ -207,6 +211,7 @@
         [self.locationManager startUpdatingLocation];
         [self.locationManager startUpdatingHeading];
     }
+    [[GANTracker sharedTracker] trackPageview:@"/main" withError:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -308,14 +313,15 @@
 {
     if (_selectedVenue) {
         isNavigating = YES;
-//        [self.locationManager startUpdatingLocation];
-//        [self.locationManager startUpdatingHeading];
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingHeading];
         NSString *name = [_selectedVenue objectForKey:@"name"];
         NSString *address = [self addressStringFromLocation:[_selectedVenue objectForKey:@"location"]];
         [_locationNameLabel setText:name];
         [_locationAddressLabel setText:address];
         [self updateDistanceDisplay];
         [self setLocationInfoHidden:NO];
+        [self.stopButton setHidden:NO];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Destination!" 
                                                         message:@"Please search for a destination first" 
@@ -330,7 +336,12 @@
 
 - (void)stopNavigation
 {
-    
+    if (_selectedVenue) {
+        isNavigating = NO;
+        [self setLocationInfoHidden:YES];
+//        [self.locationManager stopUpdatingHeading];
+//        [self.locationManager stopUpdatingLocation];
+    }
 }
 
 - (void)pauseNavigation
@@ -338,6 +349,11 @@
     
 }
 
+- (IBAction)stopButtonPressed 
+{
+    [self stopNavigation];
+    [self.stopButton setHidden:YES];
+}
 
 
 #pragma mark - UITableViewDelegateMethods
@@ -437,6 +453,9 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     if ([CLLocationManager locationServicesEnabled]) {
+        [self.locationManager startUpdatingHeading];
+        [self.locationManager startUpdatingLocation];
+        [[GANTracker sharedTracker] trackEvent:@"location_search" action:@"sucessful_entry" label:searchBar.text value:-1 withError:nil];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [self searchForAddress:searchBar.text];
         [FoursquareFetcher foursqureVenuesForQuery:searchBar.text location:_currentLocation completionBlock:^(NSArray *venues){
@@ -457,6 +476,7 @@
             [self.searchDisplayController.searchResultsTableView reloadData];
         }];
     } else {
+        [[GANTracker sharedTracker] trackEvent:@"location_search" action:@"location_not_enabled" label:@"not_enabled" value:-1 withError:nil];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" 
                                                         message:@"You must have location services enabled to search for a location" 
                                                        delegate:self 
@@ -483,6 +503,9 @@
     _currentLocation = newLocation;
     if (isNavigating) {
         [self updateDistanceDisplay];
+    } else {
+        [self.locationManager stopUpdatingLocation];
+        [self.locationManager performSelector:@selector(startUpdatingLocation) withObject:nil afterDelay:10];
     }
 }
 
@@ -491,64 +514,13 @@
     _currentHeading = newHeading;
     if (isNavigating) {
         [self updateCompassDisplay];
+    } else {
+        [self.locationManager stopUpdatingHeading];
+        [self.locationManager performSelector:@selector(startUpdatingHeading) withObject:nil afterDelay:5];
     }
 }
 
-//#pragma mark - ADBannerViewDelegate
-//
-//
-//-(void)layoutForCurrentOrientation:(BOOL)animated
-//{
-//    CGFloat animationDuration = animated ? 0.2f : 0.0f;
-//    // by default content consumes the entire view area
-//    CGRect contentFrame = self.view.bounds;
-//    // the banner still needs to be adjusted further, but this is a reasonable starting point
-//    // the y value will need to be adjusted by the banner height to get the final position
-//	CGPoint bannerOrigin = CGPointMake(CGRectGetMinX(contentFrame), CGRectGetMaxY(contentFrame));
-//    CGFloat bannerHeight = 0.0f;
-//    //_iadBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-//    bannerHeight = _bannerView.bounds.size.height; 
-//	
-//    // Depending on if the banner has been loaded, we adjust the content frame and banner location
-//    // to accomodate the ad being on or off screen.
-//    // This layout is for an ad at the bottom of the view.
-//    if(_bannerView.bannerLoaded)
-//    {
-//        contentFrame.size.height -= bannerHeight;
-//		bannerOrigin.y -= bannerHeight;
-//    }
-//    else
-//    {
-//		bannerOrigin.y += bannerHeight;
-//    }
-//    
-//    // And finally animate the changes, running layout for the content view if required.
-//    [UIView animateWithDuration:animationDuration
-//                     animations:^{
-//                         _bannerView.frame = CGRectMake(bannerOrigin.x, bannerOrigin.y, _bannerView.frame.size.width, _bannerView.frame.size.height);
-//                     }];
-//}
-// 
-//
-//-(void)bannerViewDidLoadAd:(ADBannerView *)banner
-//{
-//    [self layoutForCurrentOrientation:YES];
-//}
-//
-//-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-//{
-//    [self layoutForCurrentOrientation:YES];
-//}
-//
-//-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
-//{
-//    return YES;
-//}
-//
-//-(void)bannerViewActionDidFinish:(ADBannerView *)banner
-//{
-//}
-//
+
 #pragma mark - AdWhirlDelegate Protocol Methods
 
 - (NSString *)adWhirlApplicationKey
