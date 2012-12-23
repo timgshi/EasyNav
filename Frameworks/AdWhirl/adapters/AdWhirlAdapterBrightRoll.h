@@ -1,8 +1,7 @@
 /*
+ AdWhirlAdapterBrightRoll.h
 
- AdWhirlAdapterIAd.h
-
- Copyright 2010 AdMob, Inc.
+ Copyright 2010 BrightRoll, Inc.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -16,17 +15,22 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 
- */
+*/
 
 #import "AdWhirlAdNetworkAdapter.h"
-#import <iAd/ADBannerView.h>
-#import <iAd/ADBannerView_Deprecated.h>
+#import "BRBannerAd.h"
+#import "BRBannerAdDelegate.h"
+#import "BRFullScreenAd.h"
+#import "BRFullScreenAdDelegate.h"
 
-@interface AdWhirlAdapterIAd : AdWhirlAdNetworkAdapter <ADBannerViewDelegate> {
-  NSString *kADBannerContentSizeIdentifierPortrait;
-  NSString *kADBannerContentSizeIdentifierLandscape;
+@interface AdWhirlAdapterBrightRoll : AdWhirlAdNetworkAdapter <BRBannerAdDelegate, BRFullScreenAdDelegate>
+{
+  BRBannerAd *brBannerAd;
 }
 
+@property (nonatomic, retain) BRBannerAd *brBannerAd;
+
 + (AdWhirlAdNetworkType)networkType;
+- (void)brBannerAdFetched:(BRBannerAd *)brBannerAd;
 
 @end

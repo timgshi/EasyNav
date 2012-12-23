@@ -7,7 +7,7 @@
 //
 
 #import "EasyNavAppDelegate.h"
-#import "GANTracker.h"
+#import "GAI.h"
 
 @implementation EasyNavAppDelegate
 
@@ -67,7 +67,8 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 //        exit([[ENTestController sharedInstance] failureCount]);
 //    }];
 //#endif
-    [[GANTracker sharedTracker] startTrackerWithAccountID:kGOOGLE_ANALYTICS_ID dispatchPeriod:kGANDispatchPeriodSec delegate:nil];
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:kGOOGLE_ANALYTICS_ID];
     return YES;
 }
 

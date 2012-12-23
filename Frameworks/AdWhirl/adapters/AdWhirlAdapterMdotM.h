@@ -1,8 +1,8 @@
 /*
 
- AdWhirlAdapterIAd.h
-
- Copyright 2010 AdMob, Inc.
+ AdWhirlAdapterMdotM.h
+ 
+ Copyright 2009 AdMob, Inc.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -15,16 +15,22 @@
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
-
- */
+ 
+*/
 
 #import "AdWhirlAdNetworkAdapter.h"
-#import <iAd/ADBannerView.h>
-#import <iAd/ADBannerView_Deprecated.h>
+#import "AdWhirlCustomAdView.h"
+#import "AdWhirlWebBrowserController.h"
 
-@interface AdWhirlAdapterIAd : AdWhirlAdNetworkAdapter <ADBannerViewDelegate> {
-  NSString *kADBannerContentSizeIdentifierPortrait;
-  NSString *kADBannerContentSizeIdentifierLandscape;
+@interface AdWhirlAdapterMdotM : AdWhirlAdNetworkAdapter <AdWhirlCustomAdViewDelegate, AdWhirlWebBrowserControllerDelegate> {
+  BOOL requesting;
+  CLLocationManager *locationManager;
+  NSURLConnection *adConnection;
+  NSMutableData *adData;
+  NSURLConnection *imageConnection;
+  NSMutableData *imageData;
+  AdWhirlCustomAdView *adView;
+  AdWhirlWebBrowserController *webBrowserController;
 }
 
 + (AdWhirlAdNetworkType)networkType;

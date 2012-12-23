@@ -10,7 +10,6 @@
 #import "FoursquareFetcher.h"
 #import "TSHeadingCalculator.h"
 #import <MapKit/MapKit.h>
-#import "GANTracker.h"
 
 #define MILES_PER_METER 0.000621371192
 
@@ -149,6 +148,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.trackedViewName = @"Main Screen";
     isNavigating = NO;
 	[self setLocationInfoHidden:YES];
     [self.searchDisplayController.searchBar setBarStyle:UIBarStyleBlack];
@@ -211,7 +211,6 @@
         [self.locationManager startUpdatingLocation];
         [self.locationManager startUpdatingHeading];
     }
-    [[GANTracker sharedTracker] trackPageview:@"/main" withError:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -455,7 +454,6 @@
     if ([CLLocationManager locationServicesEnabled]) {
         [self.locationManager startUpdatingHeading];
         [self.locationManager startUpdatingLocation];
-        [[GANTracker sharedTracker] trackEvent:@"location_search" action:@"sucessful_entry" label:searchBar.text value:-1 withError:nil];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [self searchForAddress:searchBar.text];
         [FoursquareFetcher foursqureVenuesForQuery:searchBar.text location:_currentLocation completionBlock:^(NSArray *venues){
@@ -476,7 +474,6 @@
             [self.searchDisplayController.searchResultsTableView reloadData];
         }];
     } else {
-        [[GANTracker sharedTracker] trackEvent:@"location_search" action:@"location_not_enabled" label:@"not_enabled" value:-1 withError:nil];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" 
                                                         message:@"You must have location services enabled to search for a location" 
                                                        delegate:self 

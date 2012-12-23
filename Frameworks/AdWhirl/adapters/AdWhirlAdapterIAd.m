@@ -38,33 +38,27 @@
 }
 
 - (void)getAd {
-  ADBannerView *iAdView = [[ADBannerView alloc] initWithFrame:CGRectZero];
   kADBannerContentSizeIdentifierPortrait =
-    &ADBannerContentSizeIdentifierPortrait != nil ?
-      ADBannerContentSizeIdentifierPortrait :
-      ADBannerContentSizeIdentifier320x50;
+      &ADBannerContentSizeIdentifierPortrait != nil ?
+          ADBannerContentSizeIdentifierPortrait :
+          ADBannerContentSizeIdentifier320x50;
   kADBannerContentSizeIdentifierLandscape =
-    &ADBannerContentSizeIdentifierLandscape != nil ?
-      ADBannerContentSizeIdentifierLandscape :
-      ADBannerContentSizeIdentifier480x32;
-  iAdView.requiredContentSizeIdentifiers = [NSSet setWithObjects:
-                                            kADBannerContentSizeIdentifierPortrait,
-                                            kADBannerContentSizeIdentifierLandscape,
-                                            nil];
-  UIDeviceOrientation orientation;
-  if ([self.adWhirlDelegate respondsToSelector:@selector(adWhirlCurrentOrientation)]) {
-    orientation = [self.adWhirlDelegate adWhirlCurrentOrientation];
-  }
-  else {
-    orientation = [UIDevice currentDevice].orientation;
+      &ADBannerContentSizeIdentifierLandscape != nil ?
+          ADBannerContentSizeIdentifierLandscape :
+          ADBannerContentSizeIdentifier480x32;
+  ADBannerView *iAdView;
+  if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
+    iAdView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+    iAdView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+  } else {
+    iAdView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    iAdView.requiredContentSizeIdentifiers =
+        [NSSet setWithObjects:
+             kADBannerContentSizeIdentifierPortrait,
+             kADBannerContentSizeIdentifierLandscape,
+             nil];
   }
 
-  if (UIDeviceOrientationIsLandscape(orientation)) {
-    iAdView.currentContentSizeIdentifier = kADBannerContentSizeIdentifierLandscape;
-  }
-  else {
-    iAdView.currentContentSizeIdentifier = kADBannerContentSizeIdentifierPortrait;
-  }
   [iAdView setDelegate:self];
 
   self.adNetworkView = iAdView;
@@ -82,11 +76,14 @@
   ADBannerView *iAdView = (ADBannerView *)self.adNetworkView;
   if (iAdView == nil) return;
   if (UIInterfaceOrientationIsLandscape(orientation)) {
-    iAdView.currentContentSizeIdentifier = kADBannerContentSizeIdentifierLandscape;
+    iAdView.currentContentSizeIdentifier =
+        kADBannerContentSizeIdentifierLandscape;
   }
   else {
-    iAdView.currentContentSizeIdentifier = kADBannerContentSizeIdentifierPortrait;
+    iAdView.currentContentSizeIdentifier =
+        kADBannerContentSizeIdentifierPortrait;
   }
+
   // ADBanner positions itself in the center of the super view, which we do not
   // want, since we rely on publishers to resize the container view.
   // position back to 0,0

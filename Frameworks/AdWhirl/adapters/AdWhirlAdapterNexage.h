@@ -1,8 +1,7 @@
 /*
 
- AdWhirlAdapterIAd.h
-
- Copyright 2010 AdMob, Inc.
+ AdWhirlAdapterNexage.h
+ Copyright 2011 Google, Inc.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -18,15 +17,29 @@
 
  */
 
+#import <Foundation/Foundation.h>
 #import "AdWhirlAdNetworkAdapter.h"
-#import <iAd/ADBannerView.h>
-#import <iAd/ADBannerView_Deprecated.h>
+#import "NexageDelegateProtocol.h"
 
-@interface AdWhirlAdapterIAd : AdWhirlAdNetworkAdapter <ADBannerViewDelegate> {
-  NSString *kADBannerContentSizeIdentifierPortrait;
-  NSString *kADBannerContentSizeIdentifierLandscape;
+@class NexageAdViewController;
+
+@interface AdWhirlAdapterNexage : AdWhirlAdNetworkAdapter
+    <NexageDelegateProtocol> {
+  NexageAdViewController* adViewController;
+  NSString* position;
 }
 
 + (AdWhirlAdNetworkType)networkType;
+- (NSDate *)dateOfBirth;
+- (NSString *)postCode;
+- (NSString *)gender;
+- (NSString *)keywords;
+- (NSInteger)houseIncome;
+- (NSString *)city;
+- (NSString *)designatedMarketArea;
+- (NSString *)country;
+- (NSString *)ethnicity;
+- (NSString *)maritalStatus;
+- (NSString *)areaCode;
 
 @end

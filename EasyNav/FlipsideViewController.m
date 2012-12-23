@@ -7,7 +7,6 @@
 //
 
 #import "FlipsideViewController.h"
-#import "GANTracker.h"
 
 @implementation FlipsideViewController
 
@@ -43,7 +42,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [[GANTracker sharedTracker] trackPageview:@"/info" withError:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
