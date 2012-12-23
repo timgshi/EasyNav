@@ -72,69 +72,67 @@
 		4BF654461686DAD600CE6042 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654431686DAD600CE6042 /* libGoogleAnalytics.a */; };
 		4BF654471686DAD600CE6042 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654431686DAD600CE6042 /* libGoogleAnalytics.a */; };
 		4BF654491686DB0500CE6042 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF654481686DB0500CE6042 /* CoreData.framework */; };
-		4BF654611686DD3C00CE6042 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6544C1686DD3C00CE6042 /* CDataScanner.m */; };
+		4BF654611686DD3C00CE6042 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6544C1686DD3C00CE6042 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654621686DD3C00CE6042 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6544C1686DD3C00CE6042 /* CDataScanner.m */; };
-		4BF654631686DD3C00CE6042 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6544F1686DD3C00CE6042 /* CDataScanner_Extensions.m */; };
+		4BF654631686DD3C00CE6042 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6544F1686DD3C00CE6042 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654641686DD3C00CE6042 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6544F1686DD3C00CE6042 /* CDataScanner_Extensions.m */; };
-		4BF654651686DD3C00CE6042 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654511686DD3C00CE6042 /* NSCharacterSet_Extensions.m */; };
+		4BF654651686DD3C00CE6042 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654511686DD3C00CE6042 /* NSCharacterSet_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654661686DD3C00CE6042 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654511686DD3C00CE6042 /* NSCharacterSet_Extensions.m */; };
-		4BF654671686DD3C00CE6042 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654531686DD3C00CE6042 /* NSDictionary_JSONExtensions.m */; };
+		4BF654671686DD3C00CE6042 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654531686DD3C00CE6042 /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654681686DD3C00CE6042 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654531686DD3C00CE6042 /* NSDictionary_JSONExtensions.m */; };
-		4BF654691686DD3C00CE6042 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654551686DD3C00CE6042 /* NSScanner_Extensions.m */; };
+		4BF654691686DD3C00CE6042 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654551686DD3C00CE6042 /* NSScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF6546A1686DD3C00CE6042 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654551686DD3C00CE6042 /* NSScanner_Extensions.m */; };
-		4BF6546B1686DD3C00CE6042 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654581686DD3C00CE6042 /* CJSONDataSerializer.m */; };
+		4BF6546B1686DD3C00CE6042 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654581686DD3C00CE6042 /* CJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF6546C1686DD3C00CE6042 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654581686DD3C00CE6042 /* CJSONDataSerializer.m */; };
-		4BF6546D1686DD3C00CE6042 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545A1686DD3C00CE6042 /* CJSONDeserializer.m */; };
+		4BF6546D1686DD3C00CE6042 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545A1686DD3C00CE6042 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF6546E1686DD3C00CE6042 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545A1686DD3C00CE6042 /* CJSONDeserializer.m */; };
-		4BF6546F1686DD3C00CE6042 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545C1686DD3C00CE6042 /* CJSONScanner.m */; };
+		4BF6546F1686DD3C00CE6042 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545C1686DD3C00CE6042 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654701686DD3C00CE6042 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545C1686DD3C00CE6042 /* CJSONScanner.m */; };
-		4BF654711686DD3C00CE6042 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545E1686DD3C00CE6042 /* CJSONSerializer.m */; };
+		4BF654711686DD3C00CE6042 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545E1686DD3C00CE6042 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654721686DD3C00CE6042 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6545E1686DD3C00CE6042 /* CJSONSerializer.m */; };
-		4BF654731686DD3C00CE6042 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654601686DD3C00CE6042 /* CSerializedJSONData.m */; };
+		4BF654731686DD3C00CE6042 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654601686DD3C00CE6042 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654741686DD3C00CE6042 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654601686DD3C00CE6042 /* CSerializedJSONData.m */; };
-		4BF654C01686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6547A1686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m */; };
+		4BF654C01686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6547A1686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654C11686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6547A1686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m */; };
-		4BF654C21686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6547C1686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m */; };
-		4BF654C31686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6547C1686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m */; };
-		4BF654C61686DD4400CE6042 /* AdWhirlAdapterIAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654801686DD4400CE6042 /* AdWhirlAdapterIAd.m */; };
+		4BF654C61686DD4400CE6042 /* AdWhirlAdapterIAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654801686DD4400CE6042 /* AdWhirlAdapterIAd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654C71686DD4400CE6042 /* AdWhirlAdapterIAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654801686DD4400CE6042 /* AdWhirlAdapterIAd.m */; };
-		4BF654DA1686DD4400CE6042 /* AdWhirlAdapterCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654981686DD4400CE6042 /* AdWhirlAdapterCustom.m */; };
+		4BF654DA1686DD4400CE6042 /* AdWhirlAdapterCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654981686DD4400CE6042 /* AdWhirlAdapterCustom.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654DB1686DD4400CE6042 /* AdWhirlAdapterCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654981686DD4400CE6042 /* AdWhirlAdapterCustom.m */; };
-		4BF654DC1686DD4400CE6042 /* AdWhirlAdapterEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549A1686DD4400CE6042 /* AdWhirlAdapterEvent.m */; };
+		4BF654DC1686DD4400CE6042 /* AdWhirlAdapterEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549A1686DD4400CE6042 /* AdWhirlAdapterEvent.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654DD1686DD4400CE6042 /* AdWhirlAdapterEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549A1686DD4400CE6042 /* AdWhirlAdapterEvent.m */; };
-		4BF654DE1686DD4400CE6042 /* AdWhirlAdapterGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549C1686DD4400CE6042 /* AdWhirlAdapterGeneric.m */; };
+		4BF654DE1686DD4400CE6042 /* AdWhirlAdapterGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549C1686DD4400CE6042 /* AdWhirlAdapterGeneric.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654DF1686DD4400CE6042 /* AdWhirlAdapterGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549C1686DD4400CE6042 /* AdWhirlAdapterGeneric.m */; };
-		4BF654E01686DD4400CE6042 /* AdWhirlAdNetworkAdapter+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549E1686DD4400CE6042 /* AdWhirlAdNetworkAdapter+Helpers.m */; };
+		4BF654E01686DD4400CE6042 /* AdWhirlAdNetworkAdapter+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549E1686DD4400CE6042 /* AdWhirlAdNetworkAdapter+Helpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654E11686DD4400CE6042 /* AdWhirlAdNetworkAdapter+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549E1686DD4400CE6042 /* AdWhirlAdNetworkAdapter+Helpers.m */; };
-		4BF654E21686DD4400CE6042 /* AdWhirlAdNetworkAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549F1686DD4400CE6042 /* AdWhirlAdNetworkAdapter.m */; };
+		4BF654E21686DD4400CE6042 /* AdWhirlAdNetworkAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549F1686DD4400CE6042 /* AdWhirlAdNetworkAdapter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654E31686DD4400CE6042 /* AdWhirlAdNetworkAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6549F1686DD4400CE6042 /* AdWhirlAdNetworkAdapter.m */; };
-		4BF654E41686DD4400CE6042 /* AdWhirlAdNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A11686DD4400CE6042 /* AdWhirlAdNetworkConfig.m */; };
+		4BF654E41686DD4400CE6042 /* AdWhirlAdNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A11686DD4400CE6042 /* AdWhirlAdNetworkConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654E51686DD4400CE6042 /* AdWhirlAdNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A11686DD4400CE6042 /* AdWhirlAdNetworkConfig.m */; };
-		4BF654E61686DD4400CE6042 /* AdWhirlAdNetworkRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A31686DD4400CE6042 /* AdWhirlAdNetworkRegistry.m */; };
+		4BF654E61686DD4400CE6042 /* AdWhirlAdNetworkRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A31686DD4400CE6042 /* AdWhirlAdNetworkRegistry.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654E71686DD4400CE6042 /* AdWhirlAdNetworkRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A31686DD4400CE6042 /* AdWhirlAdNetworkRegistry.m */; };
-		4BF654E81686DD4400CE6042 /* AdWhirlClassWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A51686DD4400CE6042 /* AdWhirlClassWrapper.m */; };
+		4BF654E81686DD4400CE6042 /* AdWhirlClassWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A51686DD4400CE6042 /* AdWhirlClassWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654E91686DD4400CE6042 /* AdWhirlClassWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A51686DD4400CE6042 /* AdWhirlClassWrapper.m */; };
-		4BF654EA1686DD4400CE6042 /* AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A71686DD4400CE6042 /* AdWhirlConfig.m */; };
+		4BF654EA1686DD4400CE6042 /* AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A71686DD4400CE6042 /* AdWhirlConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654EB1686DD4400CE6042 /* AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A71686DD4400CE6042 /* AdWhirlConfig.m */; };
-		4BF654EC1686DD4400CE6042 /* AdWhirlConfigStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A91686DD4400CE6042 /* AdWhirlConfigStore.m */; };
+		4BF654EC1686DD4400CE6042 /* AdWhirlConfigStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A91686DD4400CE6042 /* AdWhirlConfigStore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654ED1686DD4400CE6042 /* AdWhirlConfigStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654A91686DD4400CE6042 /* AdWhirlConfigStore.m */; };
-		4BF654EE1686DD4400CE6042 /* AdWhirlCustomAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AB1686DD4400CE6042 /* AdWhirlCustomAdView.m */; };
+		4BF654EE1686DD4400CE6042 /* AdWhirlCustomAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AB1686DD4400CE6042 /* AdWhirlCustomAdView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654EF1686DD4400CE6042 /* AdWhirlCustomAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AB1686DD4400CE6042 /* AdWhirlCustomAdView.m */; };
-		4BF654F01686DD4400CE6042 /* AdWhirlError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AD1686DD4400CE6042 /* AdWhirlError.m */; };
+		4BF654F01686DD4400CE6042 /* AdWhirlError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AD1686DD4400CE6042 /* AdWhirlError.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654F11686DD4400CE6042 /* AdWhirlError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AD1686DD4400CE6042 /* AdWhirlError.m */; };
-		4BF654F21686DD4400CE6042 /* AdWhirlLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AF1686DD4400CE6042 /* AdWhirlLog.m */; };
+		4BF654F21686DD4400CE6042 /* AdWhirlLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AF1686DD4400CE6042 /* AdWhirlLog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654F31686DD4400CE6042 /* AdWhirlLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654AF1686DD4400CE6042 /* AdWhirlLog.m */; };
-		4BF654F41686DD4400CE6042 /* AdWhirlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B11686DD4400CE6042 /* AdWhirlView.m */; };
+		4BF654F41686DD4400CE6042 /* AdWhirlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B11686DD4400CE6042 /* AdWhirlView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654F51686DD4400CE6042 /* AdWhirlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B11686DD4400CE6042 /* AdWhirlView.m */; };
 		4BF654F61686DD4400CE6042 /* AdWhirlWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BF654B21686DD4400CE6042 /* AdWhirlWebBrowser.xib */; };
 		4BF654F71686DD4400CE6042 /* AdWhirlWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BF654B21686DD4400CE6042 /* AdWhirlWebBrowser.xib */; };
-		4BF654F81686DD4400CE6042 /* AdWhirlWebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B41686DD4400CE6042 /* AdWhirlWebBrowserController.m */; };
+		4BF654F81686DD4400CE6042 /* AdWhirlWebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B41686DD4400CE6042 /* AdWhirlWebBrowserController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654F91686DD4400CE6042 /* AdWhirlWebBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B41686DD4400CE6042 /* AdWhirlWebBrowserController.m */; };
-		4BF654FA1686DD4400CE6042 /* ARRollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B51686DD4400CE6042 /* ARRollerView.m */; };
+		4BF654FA1686DD4400CE6042 /* ARRollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B51686DD4400CE6042 /* ARRollerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654FB1686DD4400CE6042 /* ARRollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B51686DD4400CE6042 /* ARRollerView.m */; };
-		4BF654FC1686DD4400CE6042 /* AWNetworkReachabilityWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B81686DD4400CE6042 /* AWNetworkReachabilityWrapper.m */; };
+		4BF654FC1686DD4400CE6042 /* AWNetworkReachabilityWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B81686DD4400CE6042 /* AWNetworkReachabilityWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654FD1686DD4400CE6042 /* AWNetworkReachabilityWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654B81686DD4400CE6042 /* AWNetworkReachabilityWrapper.m */; };
-		4BF654FE1686DD4400CE6042 /* UIColor+AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654BA1686DD4400CE6042 /* UIColor+AdWhirlConfig.m */; };
+		4BF654FE1686DD4400CE6042 /* UIColor+AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654BA1686DD4400CE6042 /* UIColor+AdWhirlConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BF654FF1686DD4400CE6042 /* UIColor+AdWhirlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF654BA1686DD4400CE6042 /* UIColor+AdWhirlConfig.m */; };
 		4BFE0A1714CFC6C70005B608 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFE0A1614CFC6C70005B608 /* CFNetwork.framework */; };
 		88085E6B13F3A93000E8E91A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88085E6A13F3A93000E8E91A /* UIKit.framework */; };
@@ -236,8 +234,6 @@
 		4BF654601686DD3C00CE6042 /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSerializedJSONData.m; sourceTree = "<group>"; };
 		4BF654791686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdapterGoogleAdMobAds.h; sourceTree = "<group>"; };
 		4BF6547A1686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWhirlAdapterGoogleAdMobAds.m; sourceTree = "<group>"; };
-		4BF6547B1686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdapterGoogleAdSense.h; sourceTree = "<group>"; };
-		4BF6547C1686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWhirlAdapterGoogleAdSense.m; sourceTree = "<group>"; };
 		4BF6547F1686DD4400CE6042 /* AdWhirlAdapterIAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdapterIAd.h; sourceTree = "<group>"; };
 		4BF654801686DD4400CE6042 /* AdWhirlAdapterIAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWhirlAdapterIAd.m; sourceTree = "<group>"; };
 		4BF654931686DD4400CE6042 /* AdWhirlAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdNetworkAdapter.h; sourceTree = "<group>"; };
@@ -483,8 +479,6 @@
 			children = (
 				4BF654791686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.h */,
 				4BF6547A1686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m */,
-				4BF6547B1686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.h */,
-				4BF6547C1686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m */,
 				4BF6547F1686DD4400CE6042 /* AdWhirlAdapterIAd.h */,
 				4BF654801686DD4400CE6042 /* AdWhirlAdapterIAd.m */,
 				4BF654931686DD4400CE6042 /* AdWhirlAdNetworkAdapter.h */,
@@ -783,7 +777,6 @@
 				4BF654721686DD3C00CE6042 /* CJSONSerializer.m in Sources */,
 				4BF654741686DD3C00CE6042 /* CSerializedJSONData.m in Sources */,
 				4BF654C11686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m in Sources */,
-				4BF654C31686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m in Sources */,
 				4BF654C71686DD4400CE6042 /* AdWhirlAdapterIAd.m in Sources */,
 				4BF654DB1686DD4400CE6042 /* AdWhirlAdapterCustom.m in Sources */,
 				4BF654DD1686DD4400CE6042 /* AdWhirlAdapterEvent.m in Sources */,
@@ -827,7 +820,6 @@
 				4BF654711686DD3C00CE6042 /* CJSONSerializer.m in Sources */,
 				4BF654731686DD3C00CE6042 /* CSerializedJSONData.m in Sources */,
 				4BF654C01686DD4400CE6042 /* AdWhirlAdapterGoogleAdMobAds.m in Sources */,
-				4BF654C21686DD4400CE6042 /* AdWhirlAdapterGoogleAdSense.m in Sources */,
 				4BF654C61686DD4400CE6042 /* AdWhirlAdapterIAd.m in Sources */,
 				4BF654DA1686DD4400CE6042 /* AdWhirlAdapterCustom.m in Sources */,
 				4BF654DC1686DD4400CE6042 /* AdWhirlAdapterEvent.m in Sources */,
