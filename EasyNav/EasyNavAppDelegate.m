@@ -68,7 +68,7 @@ static const NSInteger kGANDispatchPeriodSec = 10;
 //    }];
 //#endif
     [GAI sharedInstance].trackUncaughtExceptions = YES;
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:kGOOGLE_ANALYTICS_ID];
+    [[GAI sharedInstance] trackerWithTrackingId:kGOOGLE_ANALYTICS_ID];
     return YES;
 }
 
