@@ -7,12 +7,16 @@
 //
 
 #import "EasyNavAppDelegate.h"
+#import "GAI.h"
 
 @implementation EasyNavAppDelegate
 
 @synthesize window = _window;
 
 #define kTestflightTeamID @"bec48ec49683f9bd58d587615fca9894_MjQ3NDAyMDExLTExLTAxIDIzOjIzOjMwLjM0NjI0Mg" 
+#define kGOOGLE_ANALYTICS_ID @"UA-28594569-1"
+
+static const NSInteger kGANDispatchPeriodSec = 10;
 
 - (void)setupPreferences
 {
@@ -63,6 +67,8 @@
 //        exit([[ENTestController sharedInstance] failureCount]);
 //    }];
 //#endif
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[GAI sharedInstance] trackerWithTrackingId:kGOOGLE_ANALYTICS_ID];
     return YES;
 }
 
